@@ -34,6 +34,3 @@ dependencies {
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
-
-ext['thymeleaf.version'] = '3.0.0.RELEASE'
-ext['thymeleaf-layout-dialect.version'] = '2.0.0'
