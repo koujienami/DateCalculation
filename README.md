@@ -18,6 +18,7 @@ Thymeleaf 3.0.0.RELEASE
 ## Usage
 
 ## Install
+プロジェクト内にあるinit.sqlを実行し、MySQL内の任意のDBにテーブルを作成してください。
 
 ## Licence
 
