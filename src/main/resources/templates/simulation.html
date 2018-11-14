@@ -30,6 +30,8 @@
                 </form>
             </div>
         </div>
+        
+        <p th:each="dateMaster : ${results}" th:text="${dateMaster.dateName}" />
 
         <script src="dist/bundle.js"></script>
     </body>
