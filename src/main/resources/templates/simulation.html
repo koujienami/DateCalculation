@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-        <title>Demo</title>
+        <title>計算結果確認</title>
         
         <!-- UIkit CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/css/uikit.min.css" />
@@ -18,12 +18,12 @@
     <body>
         <div class="uk-container">
             <div class="uk-card uk-card-body uk-card-primary">
-                <form>
+                <form action="#" th:action="@{/}" method="post">
                 	<fieldset class="uk-fieldset">
                 		<legend class="uk-legend">計算の基準となる日付を入力してください。</legend>
 	                	
 	                	<div class="uk-margin">
-				            <input class="uk-input" type="text" placeholder="20181101" />
+				            <input class="uk-input" type="text" placeholder="20181101" th:field="${simulationForm.baseDate}"/>
 				        </div>
 				        <button class="uk-button uk-button-default">計算実行</button>
 				    </fieldset>
