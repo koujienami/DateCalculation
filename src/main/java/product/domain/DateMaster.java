@@ -7,6 +7,8 @@ public class DateMaster {
 	private int adjustmentYear;
 	private int adjustmentMonth;
 	private int adjustmentDay;
+	private String calculated;
+	private String formula;
 
 	public String getDateId() {
 		return dateId;
@@ -46,5 +48,13 @@ public class DateMaster {
 
 	public void setAdjustmentDay(int adjustmentDay) {
 		this.adjustmentDay = adjustmentDay;
+	}
+
+	public String getCalculated() {
+		return calculated;
+	}
+
+	public String getFormula() {
+		return formula;
 	}
 }

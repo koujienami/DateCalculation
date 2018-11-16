@@ -31,8 +31,43 @@
             </div>
         </div>
         
-        <p th:each="dateMaster : ${results}" th:text="${dateMaster.dateName}" />
-
+        <div class="uk-container">
+	        <table class="uk-table uk-table-striped uk-table-hover uk-table-justify uk-table-middle">
+			    <thead>
+			        <tr>
+			            <th>No.</th>
+			            <th>日付ID</th>
+			            <th>日付名</th>
+			            <th>計算結果</th>
+			            <th>計算式(年月日)</th>
+			        </tr>
+			    </thead>
+			    <tbody th:remove="all-but-first" th:each="dateMaster, stat : ${results}">
+			        <tr>
+			            <td th:text="${stat.count}">1</td>
+			            <td th:text="${dateMaster.dateId}">abcde</td>
+			            <td th:text="${dateMaster.dateName}">翌月末</td>
+			            <td th:text="${dateMaster.calculated}">20181231</td>
+			            <td th:text="${dateMaster.formula}">0/1/99</td>
+			        </tr>
+			        <tr>
+			            <td>2</td>
+			            <td>abcd</td>
+			            <td>翌月</td>
+			            <td>20181216</td>
+			            <td>0/1/0</td>
+			        </tr>
+			        <tr>
+			            <td>3</td>
+			            <td>abc</td>
+			            <td>翌日</td>
+			            <td>20181117</td>
+			            <td>0/0/1</td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+        
         <script src="dist/bundle.js"></script>
     </body>
 </html>

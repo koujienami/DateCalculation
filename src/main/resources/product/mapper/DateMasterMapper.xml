@@ -3,6 +3,6 @@
 
 <mapper namespace="product.mapper.DateMasterMapper">
     <select id="select" resultType="product.domain.DateMaster">
-        SELECT * FROM datemaster
+        SELECT * FROM datemaster ORDER BY dateId ASC
     </select>
 </mapper>
