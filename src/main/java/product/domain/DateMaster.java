@@ -30,24 +30,12 @@ public class DateMaster {
 		this.dateName = dateName;
 	}
 
-	public int getAdjustmentYear() {
-		return adjustmentYear;
-	}
-
 	public void setAdjustmentYear(int adjustmentYear) {
 		this.adjustmentYear = adjustmentYear;
 	}
 
-	public int getAdjustmentMonth() {
-		return adjustmentMonth;
-	}
-
 	public void setAdjustmentMonth(int adjustmentMonth) {
 		this.adjustmentMonth = adjustmentMonth;
-	}
-
-	public int getAdjustmentDay() {
-		return adjustmentDay;
 	}
 
 	public void setAdjustmentDay(int adjustmentDay) {
@@ -65,7 +53,7 @@ public class DateMaster {
 	}
 
 	public String getFormula() {
-		int[] formula = {getAdjustmentYear(), getAdjustmentMonth(), getAdjustmentDay()};
+		int[] formula = {adjustmentYear, adjustmentMonth, adjustmentDay};
 		StringJoiner joiner = new StringJoiner(" / ");
 		Arrays.stream(formula).forEach(i -> joiner.add(String.valueOf(i)));
 		return joiner.toString();

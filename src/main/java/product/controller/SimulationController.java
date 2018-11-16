@@ -20,14 +20,14 @@ public class SimulationController {
 	private DateMasterMapper dateMaster;
 
 	@RequestMapping("/")
-	public String index(SimulationForm simulationForm) {
+	public String index(SimulationForm form) {
 		return "simulation";
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String simulation(@ModelAttribute SimulationForm simulationForm, Model model) {
+	public String simulation(@ModelAttribute SimulationForm form, Model model) {
 		List<DateMaster> results = dateMaster.select();
-		results.stream().forEach(e -> e.calculate(simulationForm.getBaseDate()));
+		results.stream().forEach(e -> e.calculate(form.getBaseDate()));
 		model.addAttribute("results", results);
 		return "simulation";
 	}
