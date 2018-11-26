@@ -1,7 +1,5 @@
 package product.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,25 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import product.domain.DateMaster;
-import product.domain.SimulationForm;
 import product.service.CalculationService;
 
 @Controller
-public class SimulationController {
+public class RegisterController {
 
 	@Autowired
 	private CalculationService service;
 
-	@RequestMapping("/")
-	public String index(SimulationForm form) {
-		return "simulation";
+	@RequestMapping("/register")
+	public String index(DateMaster form) {
+		return "register";
 	}
 
-	@RequestMapping(value = "/", params = "simulation", method = RequestMethod.POST)
-	public String simulation(@ModelAttribute SimulationForm form, Model model) {
-		List<DateMaster> results = service.search();
-		results.stream().forEach(e -> e.calculate(form.getBaseDate()));
-		model.addAttribute("results", results);
-		return "simulation";
+	@RequestMapping(value = "/register", params = "register", method = RequestMethod.POST)
+	public String register(@ModelAttribute DateMaster form, Model model) {
+		service.register(form);
+		return "forward:/";
 	}
 }

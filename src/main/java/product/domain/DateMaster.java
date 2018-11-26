@@ -30,12 +30,24 @@ public class DateMaster {
 		this.dateName = dateName;
 	}
 
+	public int getAdjustmentYear() {
+		return adjustmentYear;
+	}
+
 	public void setAdjustmentYear(int adjustmentYear) {
 		this.adjustmentYear = adjustmentYear;
 	}
 
+	public int getAdjustmentMonth() {
+		return adjustmentMonth;
+	}
+
 	public void setAdjustmentMonth(int adjustmentMonth) {
 		this.adjustmentMonth = adjustmentMonth;
+	}
+
+	public int getAdjustmentDay() {
+		return adjustmentDay;
 	}
 
 	public void setAdjustmentDay(int adjustmentDay) {
