@@ -56,7 +56,7 @@ public class SimulationController {
 	}
 
 	/**
-	 * 日付計算式を元にシミュレーション結果を一覧表示します。
+	 * 任意の日付計算式を削除します。
 	 * 
 	 * @param form 画面フォーム
 	 * @param model モデル
