@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import product.domain.DateMaster;
+import product.domain.DateFormula;
 import product.service.CalculationService;
 
 @Controller
@@ -17,12 +17,12 @@ public class RegisterController {
 	private CalculationService service;
 
 	@RequestMapping("/register")
-	public String index(DateMaster form) {
+	public String index(DateFormula form) {
 		return "register";
 	}
 
 	@RequestMapping(value = "/register", params = "register", method = RequestMethod.POST)
-	public String register(@ModelAttribute DateMaster form, Model model) {
+	public String register(@ModelAttribute DateFormula form, Model model) {
 		service.register(form);
 		return "forward:/";
 	}

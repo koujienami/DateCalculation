@@ -1,18 +1,12 @@
 package product.domain;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.StringJoiner;
-
-public class DateMaster {
+public class DateFormula {
 
 	private String dateId;
 	private String dateName;
 	private int adjustmentYear;
 	private int adjustmentMonth;
 	private int adjustmentDay;
-	private String calculated;
 
 	public String getDateId() {
 		return dateId;
@@ -52,22 +46,5 @@ public class DateMaster {
 
 	public void setAdjustmentDay(int adjustmentDay) {
 		this.adjustmentDay = adjustmentDay;
-	}
-
-	public String getCalculated() {
-		return calculated;
-	}
-
-	public void calculate(String baseDate) {
-		LocalDate date = LocalDate.parse(baseDate, DateTimeFormatter.ofPattern("yyyyMMdd"));
-		LocalDate calculatedDate = date.plusYears(adjustmentYear).plusMonths(adjustmentMonth).plusDays(adjustmentDay);
-		calculated = calculatedDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
-	}
-
-	public String getFormula() {
-		int[] formula = {adjustmentYear, adjustmentMonth, adjustmentDay};
-		StringJoiner joiner = new StringJoiner(" / ");
-		Arrays.stream(formula).forEach(i -> joiner.add(String.valueOf(i)));
-		return joiner.toString();
 	}
 }

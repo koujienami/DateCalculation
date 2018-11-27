@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import product.domain.DateMaster;
+import product.domain.Result;
 import product.domain.SimulationForm;
 import product.service.CalculationService;
 
@@ -26,8 +26,11 @@ public class SimulationController {
 
 	@RequestMapping(value = "/", params = "simulation", method = RequestMethod.POST)
 	public String simulation(@ModelAttribute SimulationForm form, Model model) {
-		List<DateMaster> results = service.search();
-		results.stream().forEach(e -> e.calculate(form.getBaseDate()));
+		SimulationForm resultForm = new SimulationForm(form.getBaseDate(), service.search());
+		List<Result> results = resultForm.getResults();
+
+		results.stream().forEach(e -> e.setCalculated(service.calculate(form.getBaseDate(), e.getResult())));
+
 		model.addAttribute("results", results);
 		return "simulation";
 	}
