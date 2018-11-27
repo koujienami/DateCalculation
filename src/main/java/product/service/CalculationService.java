@@ -62,6 +62,16 @@ public class CalculationService {
 	}
 
 	/**
+	 * 日付計算式を削除します。
+	 * 
+	 * @param dateId 削除対象の日付ID
+	 */
+	@Transactional
+	public void delete(String dateId) {
+		repository.deletePK(dateId);
+	}
+
+	/**
 	 * 日付計算を行います。<br/>
 	 * 計算基準日をベースに、日付計算式の加減値に基づいて計算を行います。<br/>
 	 * 計算後の書式は「yyyyMMdd」の文字列となります。

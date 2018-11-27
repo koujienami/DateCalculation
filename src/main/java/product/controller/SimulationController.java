@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -52,5 +53,18 @@ public class SimulationController {
 
 		model.addAttribute("results", results);
 		return "simulation";
+	}
+
+	/**
+	 * 日付計算式を元にシミュレーション結果を一覧表示します。
+	 * 
+	 * @param form 画面フォーム
+	 * @param model モデル
+	 * @return 表示するテンプレート
+	 */
+	@RequestMapping(value = "/{dateId}", params = "delete", method = RequestMethod.POST)
+	public String delete(@PathVariable String dateId, Model model) {
+		service.delete(dateId);
+		return "forward:/";
 	}
 }

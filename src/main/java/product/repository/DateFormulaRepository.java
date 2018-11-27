@@ -2,6 +2,7 @@ package product.repository;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -29,6 +30,7 @@ public interface DateFormulaRepository {
 	/**
 	 * 日付計算式を取得します。
 	 * 
+	 * @param dateId 日付ID
 	 * @return 日付計算式
 	 */
 	@Select("SELECT * FROM dateformula WHERE dateId = #{dateId}")
@@ -49,5 +51,13 @@ public interface DateFormulaRepository {
 	 */
 	@Update("UPDATE dateformula SET dateName = #{dateName},  adjustmentYear = #{adjustmentYear}, adjustmentMonth = #{adjustmentMonth}, adjustmentDay = #{adjustmentDay} WHERE dateId = #{dateId}")
 	void update(DateFormula formula);
+
+	/**
+	 * 日付計算式を削除します。
+	 * 
+	 * @param dateId 日付ID
+	 */
+	@Delete("DELETE FROM dateformula WHERE dateId = #{dateId}")
+	void deletePK(String dateId);
 
 }
