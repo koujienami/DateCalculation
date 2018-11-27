@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import product.domain.DateFormula;
-import product.mapper.DateFormulaRepository;
+import product.repository.DateFormulaRepository;
 
 /**
  * 日付計算に関わる処理を行うサービスです。

@@ -1,4 +1,4 @@
-package product.mapper;
+package product.repository;
 
 import java.util.List;
 
