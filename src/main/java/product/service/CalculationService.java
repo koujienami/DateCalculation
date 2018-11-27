@@ -33,6 +33,15 @@ public class CalculationService {
 	}
 
 	/**
+	 * 日付計算式を取得します。
+	 * 
+	 * @return 日付計算式
+	 */
+	public DateFormula search(String dateId) {
+		return repository.selectPK(dateId);
+	}
+
+	/**
 	 * 日付計算式を登録します。
 	 * 
 	 * @param formula 登録する日付計算式
@@ -40,6 +49,16 @@ public class CalculationService {
 	@Transactional
 	public void register(DateFormula formula) {
 		repository.insert(formula);
+	}
+
+	/**
+	 * 日付計算式を更新します。
+	 * 
+	 * @param formula 更新する日付計算式
+	 */
+	@Transactional
+	public void update(DateFormula formula) {
+		repository.update(formula);
 	}
 
 	/**

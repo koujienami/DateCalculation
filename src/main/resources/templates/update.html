@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+        <title>計算式更新</title>
+        
+        <!-- UIkit CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/css/uikit.min.css" />
+		
+		<!-- jQuery is required -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<!-- UIkit JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit-icons.min.js"></script>
+    </head>
+    
+    <body>
+        <div class="uk-container">
+            <div class="uk-card uk-card-body uk-card-primary">
+                <form action="#" th:action="@{/update/{dateId}(dateId=${dateFormula.dateId})}" method="post">
+                	<fieldset class="uk-fieldset">
+                		<legend class="uk-legend">日付ID</legend>
+	                	<div class="uk-margin">
+				            <input class="uk-input" type="text" disabled="disabled" th:field="${dateFormula.dateId}" />
+				            <input class="uk-input" type="hidden" th:field="${dateFormula.dateId}"/>
+				        </div>
+				        <legend class="uk-legend">日付名</legend>
+	                	<div class="uk-margin">
+				            <input class="uk-input" type="text" th:field="${dateFormula.dateName}"/>
+				        </div>
+				        <legend class="uk-legend">加減値(年)</legend>
+	                	<div class="uk-margin">
+				            <input class="uk-input" type="text" th:field="${dateFormula.adjustmentYear}"/>
+				        </div>
+				       <legend class="uk-legend">加減値(月)</legend>
+	                	<div class="uk-margin">
+				            <input class="uk-input" type="text" th:field="${dateFormula.adjustmentMonth}"/>
+				        </div>
+				        <legend class="uk-legend">加減値(日)</legend>
+	                	<div class="uk-margin">
+				            <input class="uk-input" type="text" th:field="${dateFormula.adjustmentDay}"/>
+				        </div>
+				        <button name="update" class="uk-button uk-button-default">更新</button>
+				        <a class="uk-button uk-button-default uk-align-right" href="/">戻る</a>
+				    </fieldset>
+                </form>
+            </div>
+        </div>
+        
+        <script src="dist/bundle.js"></script>
+    </body>
+</html>

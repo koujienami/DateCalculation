@@ -27,48 +27,66 @@
 					    </div>
 					    <button name="simulation" class="uk-button uk-button-default">計算実行</button>
 					    <a class="uk-button uk-button-default" href="register">新規登録</a>
-					    <button name="delete" class="uk-button uk-button-danger uk-align-right">削除</button>
 					</fieldset>
 	            </div>
 	        </div>
-	        
-	        <div class="uk-container">
-		        <table class="uk-table uk-table-striped uk-table-hover uk-table-justify uk-table-middle">
-				    <thead>
-				        <tr>
-				            <th>No.</th>
-				            <th>日付ID</th>
-				            <th>日付名</th>
-				            <th>計算結果</th>
-				            <th>計算式(年月日)</th>
-				        </tr>
-				    </thead>
-				    <tbody th:remove="all-but-first" th:each="dateFormula, stat : ${results}">
-				        <tr>
-				            <td th:text="${stat.count}">1</td>
-				            <td th:text="${dateFormula.dateId}">abcde</td>
-				            <td th:text="${dateFormula.dateName}">翌月末</td>
-				            <td th:text="${dateFormula.calculated}">20181231</td>
-				            <td th:text="${dateFormula.ymdFormula}">0/1/99</td>
-				        </tr>
-				        <tr>
-				            <td>2</td>
-				            <td>abcd</td>
-				            <td>翌月</td>
-				            <td>20181216</td>
-				            <td>0/1/0</td>
-				        </tr>
-				        <tr>
-				            <td>3</td>
-				            <td>abc</td>
-				            <td>翌日</td>
-				            <td>20181117</td>
-				            <td>0/0/1</td>
-				        </tr>
-				    </tbody>
-				</table>
-			</div>
-		</form>
+	    </form>
+	    
+	    <div class="uk-container">
+		    <table class="uk-table uk-table-striped uk-table-hover uk-table-justify uk-table-middle">
+			    <thead>
+			        <tr>
+			            <th>No.</th>
+			            <th>日付ID</th>
+			            <th>日付名</th>
+			            <th>計算結果</th>
+			            <th>計算式(年月日)</th>
+			            <th>編集</th>
+			        </tr>
+			    </thead>
+			    <tbody th:remove="all-but-first" th:each="dateFormula, stat : ${results}">
+			        <tr>
+			            <td th:text="${stat.count}">1</td>
+			            <td th:text="${dateFormula.dateId}">abcde</td>
+			            <td th:text="${dateFormula.dateName}">翌月末</td>
+			            <td th:text="${dateFormula.calculated}">20181231</td>
+			            <td th:text="${dateFormula.ymdFormula}">0/1/99</td>
+			            <td>
+			            	<a class="uk-button uk-button-default" th:href="@{/update/{dateId}(dateId=${dateFormula.dateId})}">更新</a>
+			            	<form action="#" th:action="@{/{dateId}(dateId=${dateFormula.dateId})}" method="post">
+			            		<button name="delete" class="uk-button uk-button-danger">削除</button>
+			            	</form>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td>2</td>
+			            <td>abcd</td>
+			            <td>翌月</td>
+			            <td>20181216</td>
+			            <td>0/1/0</td>
+			            <td>
+			            	<a class="uk-button uk-button-default" href="update">更新</a>
+			            	<form action="#" th:action="@{/{dateId}(dateId=${dateFormula.dateId})}" method="post">
+			            		<button name="delete" class="uk-button uk-button-danger">削除</button>
+			            	</form>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td>3</td>
+			            <td>abc</td>
+			            <td>翌日</td>
+			            <td>20181117</td>
+			            <td>0/0/1</td>
+			            <td>
+			            	<a class="uk-button uk-button-default" href="update">更新</a>
+			            	<form action="#" th:action="@{/{dateId}(dateId=${dateFormula.dateId})}" method="post">
+			            		<button name="delete" class="uk-button uk-button-danger">削除</button>
+			            	</form>
+			            </td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
         
         <script src="dist/bundle.js"></script>
     </body>

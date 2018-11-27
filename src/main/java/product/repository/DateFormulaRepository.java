@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import product.domain.DateFormula;
 
@@ -26,10 +27,27 @@ public interface DateFormulaRepository {
 	List<DateFormula> select();
 
 	/**
+	 * “ú•tŒvZ®‚ğæ“¾‚µ‚Ü‚·B
+	 * 
+	 * @return “ú•tŒvZ®
+	 */
+	@Select("SELECT * FROM dateformula WHERE dateId = #{dateId}")
+	DateFormula selectPK(String dateId);
+
+	/**
 	 * “ú•tŒvZ®‚ğV‹K“o˜^‚µ‚Ü‚·B
 	 * 
-	 * @param dateMaster “o˜^‚·‚é“ú•tŒvZ®
+	 * @param formula “o˜^‚·‚é“ú•tŒvZ®
 	 */
 	@Insert("INSERT INTO dateformula VALUES(#{dateId}, #{dateName}, #{adjustmentYear}, #{adjustmentMonth}, #{adjustmentDay})")
-	void insert(DateFormula dateMaster);
+	void insert(DateFormula formula);
+
+	/**
+	 * “ú•tŒvZ®‚ğXV‚µ‚Ü‚·B
+	 * 
+	 * @param formula “o˜^‚·‚é“ú•tŒvZ®
+	 */
+	@Update("UPDATE dateformula SET dateName = #{dateName},  adjustmentYear = #{adjustmentYear}, adjustmentMonth = #{adjustmentMonth}, adjustmentDay = #{adjustmentDay} WHERE dateId = #{dateId}")
+	void update(DateFormula formula);
+
 }
