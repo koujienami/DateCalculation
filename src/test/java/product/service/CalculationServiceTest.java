@@ -1,7 +1,11 @@
 package product.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import java.time.format.DateTimeParseException;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -12,6 +16,45 @@ import product.domain.DateFormula;
 
 @RunWith(Enclosed.class)
 public class CalculationServiceTest {
+
+	public static class 日付計算例外処理 {
+
+		private CalculationService sut;
+
+		@Before
+		public void before() throws Exception {
+			sut = new CalculationService();
+		}
+
+		@Test
+		public void 計算基準日にNULLを渡すとNullPointerExceptionとなる事() throws Exception {
+			assertThatThrownBy(() -> {
+				sut.calculate(null, setUpFormula(0, 0, 0));
+			}).isInstanceOf(NullPointerException.class);
+		}
+
+		@Test
+		public void 計算基準日をyyyyMMdd以外の形式で渡すとDateTimeParseExceptionとなる事() throws Exception {
+			assertThatThrownBy(() -> {
+				sut.calculate("201812", setUpFormula(0, 0, 0));
+			}).isInstanceOf(DateTimeParseException.class);
+		}
+
+		@Test
+		public void 日付計算式にNULLを渡すとNullPointerExceptionとなる事() throws Exception {
+			assertThatThrownBy(() -> {
+				sut.calculate("20181201", null);
+			}).isInstanceOf(NullPointerException.class);
+		}
+
+		private DateFormula setUpFormula(int 加減年, int 加減月, int 加減日) {
+			DateFormula formula = new DateFormula();
+			formula.setAdjustmentYear(加減年);
+			formula.setAdjustmentMonth(加減月);
+			formula.setAdjustmentDay(加減日);
+			return formula;
+		}
+	}
 
 	@RunWith(Parameterized.class)
 	public static class 日付計算 {
@@ -59,26 +102,15 @@ public class CalculationServiceTest {
 
 		@Test
 		public void test() throws Exception {
-			DateFormula formula = setUpFormula(加減年, 加減月, 加減日);
+			DateFormula formula = new DateFormula();
+			formula.setAdjustmentYear(加減年);
+			formula.setAdjustmentMonth(加減月);
+			formula.setAdjustmentDay(加減日);
 
 			CalculationService sut = new CalculationService();
 			String actual = sut.calculate(基準日, formula);
 
 			assertThat(actual).isEqualTo(期待値);
 		}
-
-		/**
-		 * 日付計算式の初期設定。
-		 * 
-		 * @return 設定された日付計算式
-		 */
-		private DateFormula setUpFormula(int year, int month, int day) {
-			DateFormula formula = new DateFormula();
-			formula.setAdjustmentYear(year);
-			formula.setAdjustmentMonth(month);
-			formula.setAdjustmentDay(day);
-			return formula;
-		}
-
 	}
 }
