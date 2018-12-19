@@ -22,7 +22,7 @@ public class CalculationServiceTest {
 		private CalculationService sut;
 
 		@Before
-		public void before() throws Exception {
+		public void setUp() throws Exception {
 			sut = new CalculationService();
 		}
 

@@ -29,7 +29,7 @@ public class DateFormulaRepositoryTest {
 	private NamedParameterJdbcOperations jdbcOperations;
 
 	@Before
-	public void before() throws Exception {
+	public void setUp() throws Exception {
 		insertDateFormula(createFormula("Y01", "—‚”N", 1, 0, 0));
 		insertDateFormula(createFormula("M01", "—‚ŒŽ", 0, 1, 0));
 	}
