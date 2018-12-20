@@ -5,10 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import product.domain.Result;
 import product.domain.SimulationForm;
@@ -20,6 +21,7 @@ import product.service.CalculationService;
  * @author koujienami
  */
 @Controller
+@RequestMapping
 public class SimulationController {
 
 	/** 日付計算サービス */
@@ -32,8 +34,8 @@ public class SimulationController {
 	 * @param form 画面フォーム
 	 * @return 表示するテンプレート
 	 */
-	@RequestMapping("/")
-	public String index(SimulationForm form) {
+	@GetMapping
+	public String index(@ModelAttribute SimulationForm form) {
 		return "simulation";
 	}
 
@@ -44,7 +46,7 @@ public class SimulationController {
 	 * @param model モデル
 	 * @return 表示するテンプレート
 	 */
-	@RequestMapping(value = "/", params = "simulation", method = RequestMethod.POST)
+	@PostMapping
 	public String simulation(@ModelAttribute SimulationForm form, Model model) {
 		SimulationForm resultForm = new SimulationForm(form.getBaseDate(), service.search());
 		List<Result> results = resultForm.getResults();
@@ -62,9 +64,9 @@ public class SimulationController {
 	 * @param model モデル
 	 * @return 表示するテンプレート
 	 */
-	@RequestMapping(value = "/{dateId}", params = "delete", method = RequestMethod.POST)
+	@PostMapping(value = "/{dateId}")
 	public String delete(@PathVariable String dateId, Model model) {
 		service.delete(dateId);
-		return "forward:/";
+		return "simulation";
 	}
 }

@@ -17,10 +17,7 @@ public class SimulationForm {
 
 	/**
 	 * デフォルトコンストラクタ。
-	 * 
-	 * @deprecated Thymeleafによる生成用。それ以外での使用禁止。
 	 */
-	@Deprecated
 	public SimulationForm() {
 	}
 

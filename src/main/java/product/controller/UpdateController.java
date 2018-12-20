@@ -3,12 +3,14 @@ package product.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import product.domain.DateFormula;
+import product.domain.SimulationForm;
 import product.service.CalculationService;
 
 /**
@@ -17,6 +19,7 @@ import product.service.CalculationService;
  * @author koujienami
  */
 @Controller
+@RequestMapping("/update/{dateId}")
 public class UpdateController {
 
 	/** 日付計算サービス */
@@ -30,7 +33,7 @@ public class UpdateController {
 	 * @param model モデル
 	 * @return 表示するテンプレート
 	 */
-	@RequestMapping("/update/{dateId}")
+	@GetMapping
 	public String index(@PathVariable String dateId, Model model) {
 		model.addAttribute("dateFormula", service.search(dateId));
 		return "update";
@@ -44,9 +47,10 @@ public class UpdateController {
 	 * @param model モデル
 	 * @return 表示するテンプレート
 	 */
-	@RequestMapping(value = "/update/{dateId}", params = "update", method = RequestMethod.POST)
-	public String update(@ModelAttribute DateFormula form) {
+	@PostMapping
+	public String update(@ModelAttribute DateFormula form, Model model) {
 		service.update(form);
-		return "forward:/";
+		model.addAttribute("simulationForm", new SimulationForm());
+		return "simulation";
 	}
 }

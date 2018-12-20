@@ -2,11 +2,14 @@ package product.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import product.domain.DateFormula;
+import product.domain.SimulationForm;
 import product.service.CalculationService;
 
 /**
@@ -15,6 +18,7 @@ import product.service.CalculationService;
  * @author koujienami
  */
 @Controller
+@RequestMapping("/register")
 public class RegisterController {
 
 	/** 日付計算サービス */
@@ -27,8 +31,8 @@ public class RegisterController {
 	 * @param form 画面フォーム
 	 * @return 表示するテンプレート
 	 */
-	@RequestMapping("/register")
-	public String index(DateFormula form) {
+	@GetMapping
+	public String index(@ModelAttribute DateFormula form) {
 		return "register";
 	}
 
@@ -40,9 +44,10 @@ public class RegisterController {
 	 * @param model モデル
 	 * @return 表示するテンプレート
 	 */
-	@RequestMapping(value = "/register", params = "register", method = RequestMethod.POST)
-	public String register(@ModelAttribute DateFormula form) {
+	@PostMapping
+	public String register(@ModelAttribute DateFormula form, Model model) {
 		service.register(form);
-		return "forward:/";
+		model.addAttribute("simulationForm", new SimulationForm());
+		return "simulation";
 	}
 }
