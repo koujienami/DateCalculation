@@ -3,6 +3,8 @@ package product.view;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.title;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -38,4 +40,10 @@ public class SimulationViewTest {
 		$(By.cssSelector(".uk-table tbody")).shouldBe(visible);
 	}
 
+	@Test
+	public void ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‰æ–Ê‚©‚çV‹K“o˜^‰æ–Ê‚Ö‘JˆÚ‚Å‚«‚é–() throws Exception {
+		$(By.id("register")).click();
+
+		assertThat(title()).isEqualTo("ŒvZ®“o˜^");
+	}
 }
