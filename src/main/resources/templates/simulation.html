@@ -23,9 +23,9 @@
 	                	<legend class="uk-legend">計算の基準となる日付を入力してください。</legend>
 		                	
 		               	<div class="uk-margin">
-					        <input class="uk-input" type="text" placeholder="20181101" th:field="${simulationForm.baseDate}"/>
+					        <input id="baseDate" class="uk-input" type="text" placeholder="20181101" th:field="${simulationForm.baseDate}"/>
 					    </div>
-					    <button name="simulation" class="uk-button uk-button-default">計算実行</button>
+					    <button id="simulation" name="simulation" class="uk-button uk-button-default">計算実行</button>
 					    <a class="uk-button uk-button-default" href="register">新規登録</a>
 					</fieldset>
 	            </div>

@@ -73,9 +73,9 @@ public class DateFormulaRepositoryTest {
 		DateFormula formula = createFormula("D01", "—‚“ú", 0, 0, 1);
 
 		sut.insert(formula);
-		DateFormula actual = sut.selectPK("M01");
+		DateFormula actual = sut.selectPK("D01");
 
-		assertThat(actual.getDateId()).isEqualTo("M01");
+		assertThat(actual.getDateId()).isEqualTo("D01");
 	}
 
 	@Test
