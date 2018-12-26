@@ -45,8 +45,22 @@ public class SimulationPage {
 		return page(RegisterPage.class);
 	}
 
+	public UpdatePage 更新画面へ遷移する(int 行) {
+		$(By.id(行 + "_" + "updateButton")).click();
+		return page(UpdatePage.class);
+	}
+
+	public SimulationPage 削除を実行する(int 行) {
+		$(By.id(行 + "_" + "deleteButton")).click();
+		return page(SimulationPage.class);
+	}
+
 	public SelenideElement 検索結果() {
 		return $(By.cssSelector(".uk-table tbody"));
+	}
+
+	public int 検索結果の件数() {
+		return $(By.cssSelector(".uk-table")).findElements(By.tagName("tbody")).size();
 	}
 
 }

@@ -67,6 +67,7 @@ public class SimulationController {
 	@PostMapping(value = "/{dateId}")
 	public String delete(@PathVariable String dateId, Model model) {
 		service.delete(dateId);
+		model.addAttribute("simulationForm", new SimulationForm());
 		return "simulation";
 	}
 }

@@ -47,40 +47,14 @@
 			    <tbody th:remove="all-but-first" th:each="dateFormula, stat : ${results}">
 			        <tr>
 			            <td th:text="${stat.count}">1</td>
-			            <td th:text="${dateFormula.dateId}">abcde</td>
-			            <td th:text="${dateFormula.dateName}">翌月末</td>
-			            <td th:text="${dateFormula.calculated}">20181231</td>
-			            <td th:text="${dateFormula.ymdFormula}">0/1/99</td>
+			            <td th:id="${stat.count} + '_dateId'" th:text="${dateFormula.dateId}">abcde</td>
+			            <td th:id="${stat.count} + '_dateName'" th:text="${dateFormula.dateName}">翌月末</td>
+			            <td th:id="${stat.count} + '_calculated'" th:text="${dateFormula.calculated}">20181231</td>
+			            <td th:id="${stat.count} + '_ymdFormula'" th:text="${dateFormula.ymdFormula}">0/1/99</td>
 			            <td>
-			            	<a class="uk-button uk-button-default" th:href="@{/update/{dateId}(dateId=${dateFormula.dateId})}">更新</a>
+			            	<a th:id="${stat.count} + '_updateButton'" class="uk-button uk-button-default" th:href="@{/update/{dateId}(dateId=${dateFormula.dateId})}">更新</a>
 			            	<form action="#" th:action="@{/{dateId}(dateId=${dateFormula.dateId})}" method="post">
-			            		<button name="delete" class="uk-button uk-button-danger">削除</button>
-			            	</form>
-			            </td>
-			        </tr>
-			        <tr>
-			            <td>2</td>
-			            <td>abcd</td>
-			            <td>翌月</td>
-			            <td>20181216</td>
-			            <td>0/1/0</td>
-			            <td>
-			            	<a class="uk-button uk-button-default" href="update">更新</a>
-			            	<form action="#" th:action="@{/{dateId}(dateId=${dateFormula.dateId})}" method="post">
-			            		<button name="delete" class="uk-button uk-button-danger">削除</button>
-			            	</form>
-			            </td>
-			        </tr>
-			        <tr>
-			            <td>3</td>
-			            <td>abc</td>
-			            <td>翌日</td>
-			            <td>20181117</td>
-			            <td>0/0/1</td>
-			            <td>
-			            	<a class="uk-button uk-button-default" href="update">更新</a>
-			            	<form action="#" th:action="@{/{dateId}(dateId=${dateFormula.dateId})}" method="post">
-			            		<button name="delete" class="uk-button uk-button-danger">削除</button>
+			            		<button th:id="${stat.count} + '_deleteButton'" name="delete" class="uk-button uk-button-danger">削除</button>
 			            	</form>
 			            </td>
 			        </tr>
