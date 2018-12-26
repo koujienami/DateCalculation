@@ -5,34 +5,24 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.List;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.DuplicateKeyException;
-import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import product.domain.DateFormula;
 
 @RunWith(SpringRunner.class)
 @MybatisTest
+@TestPropertySource(locations = "classpath:test.properties")
 public class DateFormulaRepositoryTest {
 
 	@Autowired
 	private DateFormulaRepository sut;
-
-	@Autowired
-	private NamedParameterJdbcOperations jdbcOperations;
-
-	@Before
-	public void setUp() throws Exception {
-		insertDateFormula(createFormula("Y01", "翌年", 1, 0, 0));
-		insertDateFormula(createFormula("M01", "翌月", 0, 1, 0));
-	}
 
 	@Test
 	public void 検索_全件して結果をリストで取得出来る事() throws Exception {
@@ -125,10 +115,4 @@ public class DateFormulaRepositoryTest {
 		formula.setAdjustmentDay(加減日);
 		return formula;
 	}
-
-	private void insertDateFormula(DateFormula 日付計算式) {
-		jdbcOperations.update("INSERT INTO dateformula VALUES(:dateId, :dateName, :adjustmentYear, :adjustmentMonth, :adjustmentDay)",
-			new BeanPropertySqlParameterSource(日付計算式));
-	}
-
 }
