@@ -22,23 +22,23 @@
                 	<fieldset class="uk-fieldset">
                 		<legend class="uk-legend">日付ID</legend>
 	                	<div class="uk-margin">
-				            <input class="uk-input" type="text" disabled="disabled" th:field="${dateFormula.dateId}" />
+				            <input id="dateId" class="uk-input" type="text" disabled="disabled" th:field="${dateFormula.dateId}" />
 				        </div>
 				        <legend class="uk-legend">日付名</legend>
 	                	<div class="uk-margin">
-				            <input class="uk-input" type="text" th:field="${dateFormula.dateName}"/>
+				            <input id="dateName" class="uk-input" type="text" th:field="${dateFormula.dateName}"/>
 				        </div>
 				        <legend class="uk-legend">加減値(年)</legend>
 	                	<div class="uk-margin">
-				            <input class="uk-input" type="text" th:field="${dateFormula.adjustmentYear}"/>
+				            <input id="adjustmentYear" class="uk-input" type="text" th:field="${dateFormula.adjustmentYear}"/>
 				        </div>
 				       <legend class="uk-legend">加減値(月)</legend>
 	                	<div class="uk-margin">
-				            <input class="uk-input" type="text" th:field="${dateFormula.adjustmentMonth}"/>
+				            <input id="adjustmentMonth" class="uk-input" type="text" th:field="${dateFormula.adjustmentMonth}"/>
 				        </div>
 				        <legend class="uk-legend">加減値(日)</legend>
 	                	<div class="uk-margin">
-				            <input class="uk-input" type="text" th:field="${dateFormula.adjustmentDay}"/>
+				            <input id="adjustmentDay" class="uk-input" type="text" th:field="${dateFormula.adjustmentDay}"/>
 				        </div>
 				        <button id="updateButton" name="update" class="uk-button uk-button-default">更新</button>
 				        <a id="backButton" class="uk-button uk-button-default uk-align-right" href="/">戻る</a>
