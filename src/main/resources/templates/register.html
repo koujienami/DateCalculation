@@ -23,10 +23,12 @@
                 		<legend class="uk-legend">日付ID</legend>
 	                	<div class="uk-margin">
 				            <input id="dateId" class="uk-input" type="text" placeholder="Y01" th:field="${dateFormula.dateId}"/>
+				            <p class="uk-text-danger" th:if="${#fields.hasErrors('dateFormula.dateId')}" th:errors="${dateFormula.dateId}" />
 				        </div>
 				        <legend class="uk-legend">日付名</legend>
 	                	<div class="uk-margin">
 				            <input id="dateName" class="uk-input" type="text" placeholder="翌月末" th:field="${dateFormula.dateName}"/>
+				            <p class="uk-text-danger" th:if="${#fields.hasErrors('dateFormula.dateName')}" th:errors="${dateFormula.dateName}" />
 				        </div>
 				        <legend class="uk-legend">加減値(年)</legend>
 	                	<div class="uk-margin">

@@ -27,6 +27,7 @@
 				        <legend class="uk-legend">日付名</legend>
 	                	<div class="uk-margin">
 				            <input id="dateName" class="uk-input" type="text" th:field="${dateFormula.dateName}"/>
+				            <p class="uk-text-danger" th:if="${#fields.hasErrors('dateFormula.dateName')}" th:errors="${dateFormula.dateName}" />
 				        </div>
 				        <legend class="uk-legend">加減値(年)</legend>
 	                	<div class="uk-margin">

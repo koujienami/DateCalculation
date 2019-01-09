@@ -24,6 +24,7 @@
 		                	
 		               	<div class="uk-margin">
 					        <input id="baseDate" class="uk-input" type="text" placeholder="20181101" th:field="${simulationForm.baseDate}"/>
+					        <p class="uk-text-danger" th:if="${#fields.hasErrors('simulationForm.baseDate')}" th:errors="${simulationForm.baseDate}" />
 					    </div>
 					    <button id="simulationButton" name="simulation" class="uk-button uk-button-default">計算実行</button>
 					    <a id="registerButton" class="uk-button uk-button-default" href="register">新規登録</a>

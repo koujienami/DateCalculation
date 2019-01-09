@@ -1,5 +1,8 @@
 package product.domain;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 /**
  * 日付計算式を表現するオブジェクトです。
  * 
@@ -8,8 +11,12 @@ package product.domain;
 public class DateFormula {
 
 	/** 日付ID */
+	@NotEmpty
+	@Size(min = 1, max = 6)
 	private String dateId;
 	/** 日付名 */
+	@NotEmpty
+	@Size(min = 1, max = 32)
 	private String dateName;
 	/** 加減値(年) */
 	private int adjustmentYear;

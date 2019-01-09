@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,11 +45,16 @@ public class SimulationController {
 	 * 日付計算式を元にシミュレーション結果を一覧表示します。
 	 * 
 	 * @param form 画面フォーム
+	 * @param bindingResult 入力値検証の結果
 	 * @param model モデル
 	 * @return 表示するテンプレート
 	 */
 	@PostMapping
-	public String simulation(@ModelAttribute SimulationForm form, Model model) {
+	public String simulation(@ModelAttribute @Validated SimulationForm form, BindingResult bindingResult, Model model) {
+		if (bindingResult.hasErrors()) {
+			return "simulation";
+		}
+
 		SimulationForm resultForm = new SimulationForm(form.getBaseDate(), service.search());
 		List<Result> results = resultForm.getResults();
 

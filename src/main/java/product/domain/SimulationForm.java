@@ -3,6 +3,9 @@ package product.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
 /**
  * 日付計算処理をシミュレートする画面を表現するフォームビーンです。
  * 
@@ -11,6 +14,8 @@ import java.util.List;
 public class SimulationForm {
 
 	/** 計算基準日 */
+	@NotEmpty
+	@Pattern(regexp = "((19|[2-9][0-9])[0-9]{2})(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])")
 	private String baseDate;
 	/** 計算結果 */
 	private List<Result> results;
