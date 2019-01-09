@@ -1,6 +1,6 @@
 package product.domain;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 /**
@@ -11,11 +11,11 @@ import javax.validation.constraints.Size;
 public class DateFormula {
 
 	/** 日付ID */
-	@NotEmpty
+	@NotBlank
 	@Size(min = 1, max = 6)
 	private String dateId;
 	/** 日付名 */
-	@NotEmpty
+	@NotBlank
 	@Size(min = 1, max = 32)
 	private String dateName;
 	/** 加減値(年) */
