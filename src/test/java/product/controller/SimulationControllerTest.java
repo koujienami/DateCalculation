@@ -4,6 +4,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
@@ -68,6 +69,38 @@ public class SimulationControllerTest {
 			.andExpect(view().name("simulation"));
 
 		verify(service, times(1)).delete("Y01");
+	}
+
+	@Test
+	public void シミュレーションページで計算基準日をNULLにして計算実行を押すと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/"))
+			.andExpect(status().isOk())
+			.andExpect(model().hasErrors())
+			.andExpect(view().name("simulation"));
+	}
+
+	@Test
+	public void シミュレーションページで計算基準日を空にして計算実行を押すと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/").param("baseDate", ""))
+			.andExpect(status().isOk())
+			.andExpect(model().hasErrors())
+			.andExpect(view().name("simulation"));
+	}
+
+	@Test
+	public void シミュレーションページで計算基準日を空白を入れて計算実行を押すと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/").param("baseDate", " "))
+			.andExpect(status().isOk())
+			.andExpect(model().hasErrors())
+			.andExpect(view().name("simulation"));
+	}
+
+	@Test
+	public void シミュレーションページで計算基準日に不正な値を入れて計算実行を押すと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/").param("baseDate", "2018/12/01"))
+			.andExpect(status().isOk())
+			.andExpect(model().hasErrors())
+			.andExpect(view().name("simulation"));
 	}
 
 }

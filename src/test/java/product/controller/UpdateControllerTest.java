@@ -55,10 +55,38 @@ public class UpdateControllerTest {
 
 	@Test
 	public void 更新ページで更新処理を行うとサービスで処理されてシミュレーション画面に遷移される事() throws Exception {
-		sut.perform(post("/update/{dateId}", "Y01"))
+		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01").param("dateName", "テスト日付名"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("simulation"));
 
 		verify(service, times(1)).update(any());
+	}
+
+	@Test
+	public void 更新ページで日付名がNULLの状態で更新処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("update"));
+	}
+
+	@Test
+	public void 更新ページで日付名が空の状態で更新処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01").param("dateName", ""))
+			.andExpect(status().isOk())
+			.andExpect(view().name("update"));
+	}
+
+	@Test
+	public void 更新ページで日付名が空白の状態で更新処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01").param("dateName", " "))
+			.andExpect(status().isOk())
+			.andExpect(view().name("update"));
+	}
+
+	@Test
+	public void 更新ページで日付名が32桁以上の状態で更新処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01").param("dateName", "123456789012345678901234567890123"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("update"));
 	}
 }

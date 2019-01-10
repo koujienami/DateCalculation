@@ -53,11 +53,67 @@ public class RegisterControllerTest {
 
 	@Test
 	public void 新規登録ページで登録処理を行うとサービスで処理されてシミュレーション画面に遷移される事() throws Exception {
-		sut.perform(post("/register"))
+		sut.perform(post("/register").param("dateId", "TEST").param("dateName", "テスト日付名"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("simulation"));
 
 		verify(service, times(1)).register(any());
+	}
+
+	@Test
+	public void 新規登録ページで日付IDがNULLの状態で登録処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/register").param("dateName", "テスト日付名"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("register"));
+	}
+
+	@Test
+	public void 新規登録ページで日付IDが空の状態で登録処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/register").param("dateId", "").param("dateName", "テスト日付名"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("register"));
+	}
+
+	@Test
+	public void 新規登録ページで日付IDが空白の状態で登録処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/register").param("dateId", " ").param("dateName", "テスト日付名"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("register"));
+	}
+
+	@Test
+	public void 新規登録ページで日付IDが6桁以上の状態で登録処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/register").param("dateId", "1234567").param("dateName", "テスト日付名"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("register"));
+	}
+
+	@Test
+	public void 新規登録ページで日付名がNULLの状態で登録処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/register").param("dateId", "TEST"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("register"));
+	}
+
+	@Test
+	public void 新規登録ページで日付名が空の状態で登録処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/register").param("dateId", "TEST").param("dateName", ""))
+			.andExpect(status().isOk())
+			.andExpect(view().name("register"));
+	}
+
+	@Test
+	public void 新規登録ページで日付名が空白の状態で登録処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/register").param("dateId", "TEST").param("dateName", " "))
+			.andExpect(status().isOk())
+			.andExpect(view().name("register"));
+	}
+
+	@Test
+	public void 新規登録ページで日付名が32桁以上の状態で登録処理を行うと例外情報が入った状態で画面が返る事() throws Exception {
+		sut.perform(post("/register").param("dateId", "TEST").param("dateName", "123456789012345678901234567890123"))
+			.andExpect(status().isOk())
+			.andExpect(view().name("register"));
 	}
 
 }
