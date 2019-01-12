@@ -11,8 +11,8 @@ import org.apache.ibatis.annotations.Update;
 import product.domain.DateFormula;
 
 /**
- * “ú•tŒvZ®‚ğˆµ‚¤ƒŠƒ|ƒWƒgƒŠ‚Å‚·B<br/>
- * À‘Ì‚Í{@link DateFormula}‚ÆDBƒe[ƒuƒ‹(dateformula)‚ğ•R‚Ã‚¯‚éˆ×‚ÌORMƒNƒ‰ƒX‚Å‚·B
+ * æ—¥ä»˜è¨ˆç®—å¼ã‚’æ‰±ã†ãƒªãƒã‚¸ãƒˆãƒªã§ã™ã€‚<br/>
+ * å®Ÿä½“ã¯{@link DateFormula}ã¨DBãƒ†ãƒ¼ãƒ–ãƒ«(dateformula)ã‚’ç´ã¥ã‘ã‚‹ç‚ºã®ORMã‚¯ãƒ©ã‚¹ã§ã™ã€‚
  * 
  * @author koujienami
  */
@@ -20,44 +20,44 @@ import product.domain.DateFormula;
 public interface DateFormulaRepository {
 
 	/**
-	 * “ú•tŒvZ®‚Ìˆê——‚ğæ“¾‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã®ä¸€è¦§ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return “ú•tŒvZ®‚Ìˆê——
+	 * @return æ—¥ä»˜è¨ˆç®—å¼ã®ä¸€è¦§
 	 */
 	@Select("SELECT * FROM dateformula ORDER BY dateId ASC")
 	List<DateFormula> select();
 
 	/**
-	 * “ú•tŒvZ®‚ğæ“¾‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @param dateId “ú•tID
-	 * @return “ú•tŒvZ®
+	 * @param dateId æ—¥ä»˜ID
+	 * @return æ—¥ä»˜è¨ˆç®—å¼
 	 */
 	@Select("SELECT * FROM dateformula WHERE dateId = #{dateId}")
 	DateFormula selectPK(String dateId);
 
 	/**
-	 * “ú•tŒvZ®‚ğV‹K“o˜^‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’æ–°è¦ç™»éŒ²ã—ã¾ã™ã€‚
 	 * 
-	 * @param formula “o˜^‚·‚é“ú•tŒvZ®
+	 * @param formula ç™»éŒ²ã™ã‚‹æ—¥ä»˜è¨ˆç®—å¼
 	 */
 	@Insert("INSERT INTO dateformula VALUES(#{dateId}, #{dateName}, #{adjustmentYear}, #{adjustmentMonth}, #{adjustmentDay})")
 	void insert(DateFormula formula);
 
 	/**
-	 * “ú•tŒvZ®‚ğXV‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’æ›´æ–°ã—ã¾ã™ã€‚
 	 * 
-	 * @param formula “o˜^‚·‚é“ú•tŒvZ®
+	 * @param formula ç™»éŒ²ã™ã‚‹æ—¥ä»˜è¨ˆç®—å¼
 	 */
 	@Update("UPDATE dateformula SET dateName = #{dateName},  adjustmentYear = #{adjustmentYear}, adjustmentMonth = #{adjustmentMonth}, adjustmentDay = #{adjustmentDay} WHERE dateId = #{dateId}")
 	void update(DateFormula formula);
 
 	/**
-	 * “ú•tŒvZ®‚ğíœ‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’å‰Šé™¤ã—ã¾ã™ã€‚
 	 * 
-	 * @param dateId “ú•tID
+	 * @param dateId æ—¥ä»˜ID
 	 */
 	@Delete("DELETE FROM dateformula WHERE dateId = #{dateId}")
 	void deletePK(String dateId);
-
+	
 }
