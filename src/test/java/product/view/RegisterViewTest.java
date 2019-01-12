@@ -36,22 +36,22 @@ public class RegisterViewTest {
 
 	@Before
 	public void setUpTest() {
-		page = SimulationPage.open().V‹K“o˜^‰æ–Ê‚Ö‘JˆÚ‚·‚é();
+		page = SimulationPage.open().æ–°è¦ç™»éŒ²ç”»é¢ã¸é·ç§»ã™ã‚‹();
 	}
 
 	@Test
-	public void No1_V‹K“o˜^‰æ–Ê‚©‚çƒVƒ~ƒ…[ƒŒ[ƒVƒ‡ƒ“‰æ–Ê‚Ö–ß‚ê‚é–() {
-		SimulationPage actual = page.ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ƒy[ƒW‚Ö–ß‚é();
+	public void No1_æ–°è¦ç™»éŒ²ç”»é¢ã‹ã‚‰ã‚·ãƒŸãƒ¥ãƒ¼ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ç”»é¢ã¸æˆ»ã‚Œã‚‹äº‹() {
+		SimulationPage actual = page.ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒšãƒ¼ã‚¸ã¸æˆ»ã‚‹();
 
-		assertThat(actual.title()).isEqualTo("ŒvZŒ‹‰ÊŠm”F");
+		assertThat(actual.title()).isEqualTo("è¨ˆç®—çµæœç¢ºèª");
 	}
 
 	@Test
-	public void No2_V‹K“o˜^‰æ–Ê‚ÅV‹K“o˜^‚Å‚«‚é–() throws Exception {
-		SimulationPage simulationPage = page.“ú•tID‚Í("Y02").“ú•t–¼‚Í("‘O”N").‰ÁŒ¸”N‚Í("-1").‰ÁŒ¸Œ‚Í("0").‰ÁŒ¸“ú‚Í("0").‚ÅV‹K“o˜^‚·‚é();
-		SimulationPage actual = simulationPage.ŒvZŠî€“ú‚Í("20181201").‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚·‚é();
+	public void No2_æ–°è¦ç™»éŒ²ç”»é¢ã§æ–°è¦ç™»éŒ²ã§ãã‚‹äº‹() throws Exception {
+		SimulationPage simulationPage = page.æ—¥ä»˜IDã¯("Y02").æ—¥ä»˜åã¯("å‰å¹´").åŠ æ¸›å¹´ã¯("-1").åŠ æ¸›æœˆã¯("0").åŠ æ¸›æ—¥ã¯("0").ã§æ–°è¦ç™»éŒ²ã™ã‚‹();
+		SimulationPage actual = simulationPage.è¨ˆç®—åŸºæº–æ—¥ã¯("20181201").ã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã™ã‚‹();
 
-		actual.ŒŸõŒ‹‰Ê().shouldBe(visible);
-		assertThat(actual.ŒŸõŒ‹‰Ê‚ÌŒ”()).isEqualTo(3);
+		actual.æ¤œç´¢çµæœ().shouldBe(visible);
+		assertThat(actual.æ¤œç´¢çµæœã®ä»¶æ•°()).isEqualTo(3);
 	}
 }

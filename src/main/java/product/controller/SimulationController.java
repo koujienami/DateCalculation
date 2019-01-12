@@ -18,7 +18,7 @@ import product.domain.SimulationForm;
 import product.service.CalculationService;
 
 /**
- * “ú•tŒvZˆ—‚ğƒVƒ~ƒ…ƒŒ[ƒg‚·‚é‰æ–Ê‚É•R‚Ã‚­ƒRƒ“ƒgƒ[ƒ‰[‚Å‚·B
+ * æ—¥ä»˜è¨ˆç®—å‡¦ç†ã‚’ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ãƒˆã™ã‚‹ç”»é¢ã«ç´ã¥ãã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼ã§ã™ã€‚
  * 
  * @author koujienami
  */
@@ -26,15 +26,15 @@ import product.service.CalculationService;
 @RequestMapping
 public class SimulationController {
 
-	/** “ú•tŒvZƒT[ƒrƒX */
+	/** æ—¥ä»˜è¨ˆç®—ã‚µãƒ¼ãƒ“ã‚¹ */
 	@Autowired
 	private CalculationService service;
 
 	/**
-	 * ‰Šú•\¦ˆ—‚ğs‚¢‚Ü‚·B
+	 * åˆæœŸè¡¨ç¤ºå‡¦ç†ã‚’è¡Œã„ã¾ã™ã€‚
 	 * 
-	 * @param form ‰æ–ÊƒtƒH[ƒ€
-	 * @return •\¦‚·‚éƒeƒ“ƒvƒŒ[ƒg
+	 * @param form ç”»é¢ãƒ•ã‚©ãƒ¼ãƒ 
+	 * @return è¡¨ç¤ºã™ã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 	 */
 	@GetMapping
 	public String index(@ModelAttribute SimulationForm form) {
@@ -42,12 +42,12 @@ public class SimulationController {
 	}
 
 	/**
-	 * “ú•tŒvZ®‚ğŒ³‚ÉƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“Œ‹‰Ê‚ğˆê——•\¦‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’å…ƒã«ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³çµæœã‚’ä¸€è¦§è¡¨ç¤ºã—ã¾ã™ã€‚
 	 * 
-	 * @param form ‰æ–ÊƒtƒH[ƒ€
-	 * @param bindingResult “ü—Í’lŒŸØ‚ÌŒ‹‰Ê
-	 * @param model ƒ‚ƒfƒ‹
-	 * @return •\¦‚·‚éƒeƒ“ƒvƒŒ[ƒg
+	 * @param form ç”»é¢ãƒ•ã‚©ãƒ¼ãƒ 
+	 * @param bindingResult å…¥åŠ›å€¤æ¤œè¨¼ã®çµæœ
+	 * @param model ãƒ¢ãƒ‡ãƒ«
+	 * @return è¡¨ç¤ºã™ã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 	 */
 	@PostMapping
 	public String simulation(@ModelAttribute @Validated SimulationForm form, BindingResult bindingResult, Model model) {
@@ -65,11 +65,11 @@ public class SimulationController {
 	}
 
 	/**
-	 * ”CˆÓ‚Ì“ú•tŒvZ®‚ğíœ‚µ‚Ü‚·B
+	 * ä»»æ„ã®æ—¥ä»˜è¨ˆç®—å¼ã‚’å‰Šé™¤ã—ã¾ã™ã€‚
 	 * 
-	 * @param form ‰æ–ÊƒtƒH[ƒ€
-	 * @param model ƒ‚ƒfƒ‹
-	 * @return •\¦‚·‚éƒeƒ“ƒvƒŒ[ƒg
+	 * @param form ç”»é¢ãƒ•ã‚©ãƒ¼ãƒ 
+	 * @param model ãƒ¢ãƒ‡ãƒ«
+	 * @return è¡¨ç¤ºã™ã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 	 */
 	@PostMapping(value = "/{dateId}")
 	public String delete(@PathVariable String dateId, Model model) {

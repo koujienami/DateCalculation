@@ -16,7 +16,7 @@ import product.domain.SimulationForm;
 import product.service.CalculationService;
 
 /**
- * “ú•tŒvZ®‚ğXV‚·‚é‰æ–Ê‚É•R‚Ã‚­ƒRƒ“ƒgƒ[ƒ‰[‚Å‚·B
+ * æ—¥ä»˜è¨ˆç®—å¼ã‚’æ›´æ–°ã™ã‚‹ç”»é¢ã«ç´ã¥ãã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼ã§ã™ã€‚
  * 
  * @author koujienami
  */
@@ -24,16 +24,16 @@ import product.service.CalculationService;
 @RequestMapping("/update/{dateId}")
 public class UpdateController {
 
-	/** “ú•tŒvZƒT[ƒrƒX */
+	/** æ—¥ä»˜è¨ˆç®—ã‚µãƒ¼ãƒ“ã‚¹ */
 	@Autowired
 	private CalculationService service;
 
 	/**
-	 * ‰Šú•\¦ˆ—‚ğs‚¢‚Ü‚·B
+	 * åˆæœŸè¡¨ç¤ºå‡¦ç†ã‚’è¡Œã„ã¾ã™ã€‚
 	 * 
-	 * @param form ‰æ–ÊƒtƒH[ƒ€
-	 * @param model ƒ‚ƒfƒ‹
-	 * @return •\¦‚·‚éƒeƒ“ƒvƒŒ[ƒg
+	 * @param form ç”»é¢ãƒ•ã‚©ãƒ¼ãƒ 
+	 * @param model ãƒ¢ãƒ‡ãƒ«
+	 * @return è¡¨ç¤ºã™ã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 	 */
 	@GetMapping
 	public String index(@PathVariable String dateId, Model model) {
@@ -42,12 +42,12 @@ public class UpdateController {
 	}
 
 	/**
-	 * “ú•tŒvZ®‚ğXV‚µ‚Ü‚·B<br/>
-	 * XV‚µ‚½Œã‚Íˆê——‰æ–Ê‚Ö–ß‚è‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’æ›´æ–°ã—ã¾ã™ã€‚<br/>
+	 * æ›´æ–°ã—ãŸå¾Œã¯ä¸€è¦§ç”»é¢ã¸æˆ»ã‚Šã¾ã™ã€‚
 	 * 
-	 * @param form ‰æ–ÊƒtƒH[ƒ€
-	 * @param model ƒ‚ƒfƒ‹
-	 * @return •\¦‚·‚éƒeƒ“ƒvƒŒ[ƒg
+	 * @param form ç”»é¢ãƒ•ã‚©ãƒ¼ãƒ 
+	 * @param model ãƒ¢ãƒ‡ãƒ«
+	 * @return è¡¨ç¤ºã™ã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 	 */
 	@PostMapping
 	public String update(@ModelAttribute @Validated DateFormula form, BindingResult bindingResult, Model model) {

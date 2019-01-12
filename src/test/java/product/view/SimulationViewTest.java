@@ -41,37 +41,37 @@ public class SimulationViewTest {
 	}
 
 	@Test
-	public void No1_ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‰æ–Ê‚ÅŒvZŠî€“ú‚É20181201‚ğ“ü‚ê‚ÄŒ‹‰Ê‚ªˆê——‚Åæ“¾‚Å‚«‚é–() {
-		SimulationPage actual = page.ŒvZŠî€“ú‚Í("20181201").‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚·‚é();
+	public void No1_ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ç”»é¢ã§è¨ˆç®—åŸºæº–æ—¥ã«20181201ã‚’å…¥ã‚Œã¦çµæœãŒä¸€è¦§ã§å–å¾—ã§ãã‚‹äº‹() {
+		SimulationPage actual = page.è¨ˆç®—åŸºæº–æ—¥ã¯("20181201").ã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã™ã‚‹();
 
-		actual.ŒŸõŒ‹‰Ê().shouldBe(visible);
-		assertThat(actual.ŒŸõŒ‹‰Ê‚ÌŒ”()).isEqualTo(2);
+		actual.æ¤œç´¢çµæœ().shouldBe(visible);
+		assertThat(actual.æ¤œç´¢çµæœã®ä»¶æ•°()).isEqualTo(2);
 	}
 
 	@Test
-	public void No2_ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‰æ–Ê‚©‚çV‹K“o˜^‰æ–Ê‚Ö‘JˆÚ‚Å‚«‚é–() throws Exception {
-		RegisterPage actual = page.V‹K“o˜^‰æ–Ê‚Ö‘JˆÚ‚·‚é();
+	public void No2_ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ç”»é¢ã‹ã‚‰æ–°è¦ç™»éŒ²ç”»é¢ã¸é·ç§»ã§ãã‚‹äº‹() throws Exception {
+		RegisterPage actual = page.æ–°è¦ç™»éŒ²ç”»é¢ã¸é·ç§»ã™ã‚‹();
 
-		assertThat(actual.title()).isEqualTo("ŒvZ®“o˜^");
+		assertThat(actual.title()).isEqualTo("è¨ˆç®—å¼ç™»éŒ²");
 	}
 
 	@Test
-	public void No3_ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‰æ–Ê‚©‚çXV‰æ–Ê‚Ö‘JˆÚ‚Å‚«‚é–() throws Exception {
-		page.ŒvZŠî€“ú‚Í("20181201").‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚·‚é();
+	public void No3_ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ç”»é¢ã‹ã‚‰æ›´æ–°ç”»é¢ã¸é·ç§»ã§ãã‚‹äº‹() throws Exception {
+		page.è¨ˆç®—åŸºæº–æ—¥ã¯("20181201").ã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã™ã‚‹();
 
-		UpdatePage actual = page.XV‰æ–Ê‚Ö‘JˆÚ‚·‚é(1);
+		UpdatePage actual = page.æ›´æ–°ç”»é¢ã¸é·ç§»ã™ã‚‹(1);
 
-		assertThat(actual.title()).isEqualTo("ŒvZ®XV");
+		assertThat(actual.title()).isEqualTo("è¨ˆç®—å¼æ›´æ–°");
 	}
 
 	@Test
-	public void No4_ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‰æ–Ê‚©‚çíœÀso—ˆ‚é–() throws Exception {
-		page.ŒvZŠî€“ú‚Í("20181201").‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚·‚é();
+	public void No4_ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ç”»é¢ã‹ã‚‰å‰Šé™¤å®Ÿè¡Œå‡ºæ¥ã‚‹äº‹() throws Exception {
+		page.è¨ˆç®—åŸºæº–æ—¥ã¯("20181201").ã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã™ã‚‹();
 
-		page.íœ‚ğÀs‚·‚é(1);
-		SimulationPage actual = page.ŒvZŠî€“ú‚Í("20181201").‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚·‚é();
+		page.å‰Šé™¤ã‚’å®Ÿè¡Œã™ã‚‹(1);
+		SimulationPage actual = page.è¨ˆç®—åŸºæº–æ—¥ã¯("20181201").ã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã™ã‚‹();
 
-		actual.ŒŸõŒ‹‰Ê().shouldBe(visible);
-		assertThat(actual.ŒŸõŒ‹‰Ê‚ÌŒ”()).isEqualTo(1);
+		actual.æ¤œç´¢çµæœ().shouldBe(visible);
+		assertThat(actual.æ¤œç´¢çµæœã®ä»¶æ•°()).isEqualTo(1);
 	}
 }

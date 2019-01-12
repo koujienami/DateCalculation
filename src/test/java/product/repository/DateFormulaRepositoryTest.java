@@ -25,42 +25,42 @@ public class DateFormulaRepositoryTest {
 	private DateFormulaRepository sut;
 
 	@Test
-	public void ŒŸõ_‘SŒ‚µ‚ÄŒ‹‰Ê‚ğƒŠƒXƒg‚Åæ“¾o—ˆ‚é–() throws Exception {
+	public void æ¤œç´¢_å…¨ä»¶ã—ã¦çµæœã‚’ãƒªã‚¹ãƒˆã§å–å¾—å‡ºæ¥ã‚‹äº‹() throws Exception {
 		List<DateFormula> actual = sut.select();
 
 		assertThat(actual.size()).isEqualTo(2);
 	}
 
 	@Test
-	public void ŒŸõ_1Œ‚µ‚ÄŒ‹‰Ê‚ªƒL[‚É•R‚Ã‚­1Œ‚¾‚¯æ“¾o—ˆ‚é–() throws Exception {
+	public void æ¤œç´¢_1ä»¶ã—ã¦çµæœãŒã‚­ãƒ¼ã«ç´ã¥ã1ä»¶ã ã‘å–å¾—å‡ºæ¥ã‚‹äº‹() throws Exception {
 		DateFormula actual = sut.selectPK("Y01");
 
 		assertThat(actual.getDateId()).isEqualTo("Y01");
-		assertThat(actual.getDateName()).isEqualTo("—‚”N");
+		assertThat(actual.getDateName()).isEqualTo("ç¿Œå¹´");
 		assertThat(actual.getAdjustmentYear()).isEqualTo(1);
 		assertThat(actual.getAdjustmentMonth()).isEqualTo(0);
 		assertThat(actual.getAdjustmentDay()).isEqualTo(0);
 	}
 
 	@Test
-	public void ‘¶İ‚µ‚È‚¢ƒf[ƒ^‚ğŒŸõ‚·‚é‚ÆŒ‹‰Ê‚ªNULL‚Æ‚È‚é–() throws Exception {
+	public void å­˜åœ¨ã—ãªã„ãƒ‡ãƒ¼ã‚¿ã‚’æ¤œç´¢ã™ã‚‹ã¨çµæœãŒNULLã¨ãªã‚‹äº‹() throws Exception {
 		DateFormula actual = sut.selectPK("EmptyData");
 
-		// TODO:ƒT[ƒrƒX‘¤‚ÅC³‚µANull‚ğ•Ô‚³‚È‚¢‚æ‚¤‚É‚·‚é‚×‚«B
+		// TODO:ã‚µãƒ¼ãƒ“ã‚¹å´ã§ä¿®æ­£ã—ã€Nullã‚’è¿”ã•ãªã„ã‚ˆã†ã«ã™ã‚‹ã¹ãã€‚
 		assertThat(actual).isNull();
 	}
 
 	@Test
-	public void NULL‚ÅŒŸõ‚·‚é‚ÆŒ‹‰Ê‚ªNULL‚Æ‚È‚é–() throws Exception {
+	public void NULLã§æ¤œç´¢ã™ã‚‹ã¨çµæœãŒNULLã¨ãªã‚‹äº‹() throws Exception {
 		DateFormula actual = sut.selectPK(null);
 
-		// TODO:ƒT[ƒrƒX‘¤‚ÅC³‚µANull‚ğ•Ô‚³‚È‚¢‚æ‚¤‚É‚·‚é‚×‚«B
+		// TODO:ã‚µãƒ¼ãƒ“ã‚¹å´ã§ä¿®æ­£ã—ã€Nullã‚’è¿”ã•ãªã„ã‚ˆã†ã«ã™ã‚‹ã¹ãã€‚
 		assertThat(actual).isNull();
 	}
 
 	@Test
-	public void V‹K“o˜^‚ªo—ˆ‚é–() throws Exception {
-		DateFormula formula = createFormula("D01", "—‚“ú", 0, 0, 1);
+	public void æ–°è¦ç™»éŒ²ãŒå‡ºæ¥ã‚‹äº‹() throws Exception {
+		DateFormula formula = createFormula("D01", "ç¿Œæ—¥", 0, 0, 1);
 
 		sut.insert(formula);
 		DateFormula actual = sut.selectPK("D01");
@@ -69,21 +69,21 @@ public class DateFormulaRepositoryTest {
 	}
 
 	@Test
-	public void ƒL[‚É•R‚Ã‚­1Œ‚ÌXV‚ªo—ˆ‚é–() throws Exception {
-		DateFormula formula = createFormula("Y01", "—‚X”N", 2, 0, 0);
+	public void ã‚­ãƒ¼ã«ç´ã¥ã1ä»¶ã®æ›´æ–°ãŒå‡ºæ¥ã‚‹äº‹() throws Exception {
+		DateFormula formula = createFormula("Y01", "ç¿Œã€…å¹´", 2, 0, 0);
 
 		sut.update(formula);
 		DateFormula actual = sut.selectPK("Y01");
 
 		assertThat(actual.getDateId()).isEqualTo("Y01");
-		assertThat(actual.getDateName()).isEqualTo("—‚X”N");
+		assertThat(actual.getDateName()).isEqualTo("ç¿Œã€…å¹´");
 		assertThat(actual.getAdjustmentYear()).isEqualTo(2);
 		assertThat(actual.getAdjustmentMonth()).isEqualTo(0);
 		assertThat(actual.getAdjustmentDay()).isEqualTo(0);
 	}
 
 	@Test
-	public void ƒL[‚É•R‚Ã‚­1Œ‚Ìíœ‚ªo—ˆ‚é–() throws Exception {
+	public void ã‚­ãƒ¼ã«ç´ã¥ã1ä»¶ã®å‰Šé™¤ãŒå‡ºæ¥ã‚‹äº‹() throws Exception {
 		sut.deletePK("Y01");
 		List<DateFormula> actual = sut.select();
 
@@ -91,8 +91,8 @@ public class DateFormulaRepositoryTest {
 	}
 
 	@Test
-	public void Šù‚É‘¶İ‚·‚éƒL[‚Å“o˜^‚µ‚æ‚¤‚Æ‚·‚é‚ÆDuplicateKeyException‚Æ‚È‚é–() throws Exception {
-		DateFormula formula = createFormula("Y01", "—‚X”N", 2, 0, 0);
+	public void æ—¢ã«å­˜åœ¨ã™ã‚‹ã‚­ãƒ¼ã§ç™»éŒ²ã—ã‚ˆã†ã¨ã™ã‚‹ã¨DuplicateKeyExceptionã¨ãªã‚‹äº‹() throws Exception {
+		DateFormula formula = createFormula("Y01", "ç¿Œã€…å¹´", 2, 0, 0);
 
 		assertThatThrownBy(() -> {
 			sut.insert(formula);
@@ -100,19 +100,19 @@ public class DateFormulaRepositoryTest {
 	}
 
 	@Test
-	public void NULL‚Å“o˜^‚µ‚æ‚¤‚Æ‚·‚é‚ÆDataIntegrityViolationException‚Æ‚È‚é–() throws Exception {
+	public void NULLã§ç™»éŒ²ã—ã‚ˆã†ã¨ã™ã‚‹ã¨DataIntegrityViolationExceptionã¨ãªã‚‹äº‹() throws Exception {
 		assertThatThrownBy(() -> {
 			sut.insert(null);
 		}).isInstanceOf(DataIntegrityViolationException.class);
 	}
 
-	private DateFormula createFormula(String “ú•tID, String “ú•t–¼, int ‰ÁŒ¸”N, int ‰ÁŒ¸Œ, int ‰ÁŒ¸“ú) {
+	private DateFormula createFormula(String æ—¥ä»˜ID, String æ—¥ä»˜å, int åŠ æ¸›å¹´, int åŠ æ¸›æœˆ, int åŠ æ¸›æ—¥) {
 		DateFormula formula = new DateFormula();
-		formula.setDateId(“ú•tID);
-		formula.setDateName(“ú•t–¼);
-		formula.setAdjustmentYear(‰ÁŒ¸”N);
-		formula.setAdjustmentMonth(‰ÁŒ¸Œ);
-		formula.setAdjustmentDay(‰ÁŒ¸“ú);
+		formula.setDateId(æ—¥ä»˜ID);
+		formula.setDateName(æ—¥ä»˜å);
+		formula.setAdjustmentYear(åŠ æ¸›å¹´);
+		formula.setAdjustmentMonth(åŠ æ¸›æœˆ);
+		formula.setAdjustmentDay(åŠ æ¸›æ—¥);
 		return formula;
 	}
 }

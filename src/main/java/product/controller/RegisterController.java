@@ -15,7 +15,7 @@ import product.domain.SimulationForm;
 import product.service.CalculationService;
 
 /**
- * “ú•tŒvZ®‚ğV‹K“o˜^‚·‚é‰æ–Ê‚É•R‚Ã‚­ƒRƒ“ƒgƒ[ƒ‰[‚Å‚·B
+ * æ—¥ä»˜è¨ˆç®—å¼ã‚’æ–°è¦ç™»éŒ²ã™ã‚‹ç”»é¢ã«ç´ã¥ãã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼ã§ã™ã€‚
  * 
  * @author koujienami
  */
@@ -23,15 +23,15 @@ import product.service.CalculationService;
 @RequestMapping("/register")
 public class RegisterController {
 
-	/** “ú•tŒvZƒT[ƒrƒX */
+	/** æ—¥ä»˜è¨ˆç®—ã‚µãƒ¼ãƒ“ã‚¹ */
 	@Autowired
 	private CalculationService service;
 
 	/**
-	 * ‰Šú•\¦ˆ—‚ğs‚¢‚Ü‚·B
+	 * åˆæœŸè¡¨ç¤ºå‡¦ç†ã‚’è¡Œã„ã¾ã™ã€‚
 	 * 
-	 * @param form ‰æ–ÊƒtƒH[ƒ€
-	 * @return •\¦‚·‚éƒeƒ“ƒvƒŒ[ƒg
+	 * @param form ç”»é¢ãƒ•ã‚©ãƒ¼ãƒ 
+	 * @return è¡¨ç¤ºã™ã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 	 */
 	@GetMapping
 	public String index(@ModelAttribute DateFormula form) {
@@ -39,12 +39,12 @@ public class RegisterController {
 	}
 
 	/**
-	 * “ú•tŒvZ®‚ğV‹K“o˜^‚µ‚Ü‚·B<br/>
-	 * “o˜^‚µ‚½Œã‚Íˆê——‰æ–Ê‚Ö–ß‚è‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’æ–°è¦ç™»éŒ²ã—ã¾ã™ã€‚<br/>
+	 * ç™»éŒ²ã—ãŸå¾Œã¯ä¸€è¦§ç”»é¢ã¸æˆ»ã‚Šã¾ã™ã€‚
 	 * 
-	 * @param form ‰æ–ÊƒtƒH[ƒ€
-	 * @param model ƒ‚ƒfƒ‹
-	 * @return •\¦‚·‚éƒeƒ“ƒvƒŒ[ƒg
+	 * @param form ç”»é¢ãƒ•ã‚©ãƒ¼ãƒ 
+	 * @param model ãƒ¢ãƒ‡ãƒ«
+	 * @return è¡¨ç¤ºã™ã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 	 */
 	@PostMapping
 	public String register(@ModelAttribute @Validated DateFormula form, BindingResult bindingResult, Model model) {

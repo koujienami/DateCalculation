@@ -45,7 +45,7 @@ public class UpdateControllerTest {
 	}
 
 	@Test
-	public void XVƒy[ƒW‚ÌƒŠƒNƒGƒXƒgŒ‹‰Ê‚ª³í‚Æ‚È‚èƒT[ƒrƒX‚ÌŒŸõ‚ğŒÄ‚Î‚ê‚ÄView‚Æ‚µ‚Äupdate‚ª•Ô‚é–() throws Exception {
+	public void æ›´æ–°ãƒšãƒ¼ã‚¸ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆçµæœãŒæ­£å¸¸ã¨ãªã‚Šã‚µãƒ¼ãƒ“ã‚¹ã®æ¤œç´¢ã‚’å‘¼ã°ã‚Œã¦Viewã¨ã—ã¦updateãŒè¿”ã‚‹äº‹() throws Exception {
 		sut.perform(get("/update/{dateId}", "Y01"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("update"));
@@ -54,8 +54,8 @@ public class UpdateControllerTest {
 	}
 
 	@Test
-	public void XVƒy[ƒW‚ÅXVˆ—‚ğs‚¤‚ÆƒT[ƒrƒX‚Åˆ—‚³‚ê‚ÄƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‰æ–Ê‚É‘JˆÚ‚³‚ê‚é–() throws Exception {
-		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01").param("dateName", "ƒeƒXƒg“ú•t–¼"))
+	public void æ›´æ–°ãƒšãƒ¼ã‚¸ã§æ›´æ–°å‡¦ç†ã‚’è¡Œã†ã¨ã‚µãƒ¼ãƒ“ã‚¹ã§å‡¦ç†ã•ã‚Œã¦ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ç”»é¢ã«é·ç§»ã•ã‚Œã‚‹äº‹() throws Exception {
+		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01").param("dateName", "ãƒ†ã‚¹ãƒˆæ—¥ä»˜å"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("simulation"));
 
@@ -63,28 +63,28 @@ public class UpdateControllerTest {
 	}
 
 	@Test
-	public void XVƒy[ƒW‚Å“ú•t–¼‚ªNULL‚Ìó‘Ô‚ÅXVˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
+	public void æ›´æ–°ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜åãŒNULLã®çŠ¶æ…‹ã§æ›´æ–°å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
 		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("update"));
 	}
 
 	@Test
-	public void XVƒy[ƒW‚Å“ú•t–¼‚ª‹ó‚Ìó‘Ô‚ÅXVˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
+	public void æ›´æ–°ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜åãŒç©ºã®çŠ¶æ…‹ã§æ›´æ–°å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
 		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01").param("dateName", ""))
 			.andExpect(status().isOk())
 			.andExpect(view().name("update"));
 	}
 
 	@Test
-	public void XVƒy[ƒW‚Å“ú•t–¼‚ª‹ó”’‚Ìó‘Ô‚ÅXVˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
+	public void æ›´æ–°ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜åãŒç©ºç™½ã®çŠ¶æ…‹ã§æ›´æ–°å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
 		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01").param("dateName", " "))
 			.andExpect(status().isOk())
 			.andExpect(view().name("update"));
 	}
 
 	@Test
-	public void XVƒy[ƒW‚Å“ú•t–¼‚ª32Œ…ˆÈã‚Ìó‘Ô‚ÅXVˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
+	public void æ›´æ–°ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜åãŒ32æ¡ä»¥ä¸Šã®çŠ¶æ…‹ã§æ›´æ–°å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
 		sut.perform(post("/update/{dateId}", "Y01").param("dateId", "Y01").param("dateName", "123456789012345678901234567890123"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("update"));

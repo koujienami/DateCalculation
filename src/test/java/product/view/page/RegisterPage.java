@@ -34,37 +34,37 @@ public class RegisterPage {
 		return Selenide.title();
 	}
 
-	public SimulationPage ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ƒy[ƒW‚Ö–ß‚é() {
+	public SimulationPage ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒšãƒ¼ã‚¸ã¸æˆ»ã‚‹() {
 		backButton.click();
 		return page(SimulationPage.class);
 	}
 
-	public RegisterPage “ú•tID‚Í(String “ú•tID) {
-		dateId.setValue(“ú•tID);
+	public RegisterPage æ—¥ä»˜IDã¯(String æ—¥ä»˜ID) {
+		dateId.setValue(æ—¥ä»˜ID);
 		return page(RegisterPage.class);
 	}
 
-	public RegisterPage “ú•t–¼‚Í(String “ú•t–¼) {
-		dateName.setValue(“ú•t–¼);
+	public RegisterPage æ—¥ä»˜åã¯(String æ—¥ä»˜å) {
+		dateName.setValue(æ—¥ä»˜å);
 		return page(RegisterPage.class);
 	}
 
-	public RegisterPage ‰ÁŒ¸”N‚Í(String ‰ÁŒ¸”N) {
-		adjustmentYear.setValue(‰ÁŒ¸”N);
+	public RegisterPage åŠ æ¸›å¹´ã¯(String åŠ æ¸›å¹´) {
+		adjustmentYear.setValue(åŠ æ¸›å¹´);
 		return page(RegisterPage.class);
 	}
 
-	public RegisterPage ‰ÁŒ¸Œ‚Í(String ‰ÁŒ¸Œ) {
-		adjustmentMonth.setValue(‰ÁŒ¸Œ);
+	public RegisterPage åŠ æ¸›æœˆã¯(String åŠ æ¸›æœˆ) {
+		adjustmentMonth.setValue(åŠ æ¸›æœˆ);
 		return page(RegisterPage.class);
 	}
 
-	public RegisterPage ‰ÁŒ¸“ú‚Í(String ‰ÁŒ¸“ú) {
-		adjustmentDay.setValue(‰ÁŒ¸“ú);
+	public RegisterPage åŠ æ¸›æ—¥ã¯(String åŠ æ¸›æ—¥) {
+		adjustmentDay.setValue(åŠ æ¸›æ—¥);
 		return page(RegisterPage.class);
 	}
 
-	public SimulationPage ‚ÅV‹K“o˜^‚·‚é() {
+	public SimulationPage ã§æ–°è¦ç™»éŒ²ã™ã‚‹() {
 		registerButton.click();
 		return page(SimulationPage.class);
 	}

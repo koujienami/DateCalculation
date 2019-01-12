@@ -4,112 +4,112 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 /**
- * “ú•tŒvZ®‚ğ•\Œ»‚·‚éƒIƒuƒWƒFƒNƒg‚Å‚·B
+ * æ—¥ä»˜è¨ˆç®—å¼ã‚’è¡¨ç¾ã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§ã™ã€‚
  * 
  * @author koujienami
  */
 public class DateFormula {
 
-	/** “ú•tID */
+	/** æ—¥ä»˜ID */
 	@NotBlank
 	@Size(min = 1, max = 6)
 	private String dateId;
-	/** “ú•t–¼ */
+	/** æ—¥ä»˜å */
 	@NotBlank
 	@Size(min = 1, max = 32)
 	private String dateName;
-	/** ‰ÁŒ¸’l(”N) */
+	/** åŠ æ¸›å€¤(å¹´) */
 	private int adjustmentYear;
-	/** ‰ÁŒ¸’l(Œ) */
+	/** åŠ æ¸›å€¤(æœˆ) */
 	private int adjustmentMonth;
-	/** ‰ÁŒ¸’l(“ú) */
+	/** åŠ æ¸›å€¤(æ—¥) */
 	private int adjustmentDay;
 
 	/**
-	 * “ú•tID‚ğæ“¾‚µ‚Ü‚·B
+	 * æ—¥ä»˜IDã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return “ú•tID
+	 * @return æ—¥ä»˜ID
 	 */
 	public String getDateId() {
 		return dateId;
 	}
 
 	/**
-	 * “ú•tID‚ğİ’è‚µ‚Ü‚·B
+	 * æ—¥ä»˜IDã‚’è¨­å®šã—ã¾ã™ã€‚
 	 * 
-	 * @param dateId “ú•tID
+	 * @param dateId æ—¥ä»˜ID
 	 */
 	public void setDateId(String dateId) {
 		this.dateId = dateId;
 	}
 
 	/**
-	 * “ú•t–¼‚ğæ“¾‚µ‚Ü‚·B
+	 * æ—¥ä»˜åã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return “ú•t–¼
+	 * @return æ—¥ä»˜å
 	 */
 	public String getDateName() {
 		return dateName;
 	}
 
 	/**
-	 * “ú•t–¼‚ğİ’è‚µ‚Ü‚·B
+	 * æ—¥ä»˜åã‚’è¨­å®šã—ã¾ã™ã€‚
 	 * 
-	 * @param dateName “ú•t–¼
+	 * @param dateName æ—¥ä»˜å
 	 */
 	public void setDateName(String dateName) {
 		this.dateName = dateName;
 	}
 
 	/**
-	 * ‰ÁŒ¸’l(”N)‚ğæ“¾‚µ‚Ü‚·B
+	 * åŠ æ¸›å€¤(å¹´)ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return ‰ÁŒ¸’l(”N)
+	 * @return åŠ æ¸›å€¤(å¹´)
 	 */
 	public int getAdjustmentYear() {
 		return adjustmentYear;
 	}
 
 	/**
-	 * ‰ÁŒ¸’l(”N)‚ğİ’è‚µ‚Ü‚·B
+	 * åŠ æ¸›å€¤(å¹´)ã‚’è¨­å®šã—ã¾ã™ã€‚
 	 * 
-	 * @param adjustmentYear ‰ÁŒ¸’l(”N)
+	 * @param adjustmentYear åŠ æ¸›å€¤(å¹´)
 	 */
 	public void setAdjustmentYear(int adjustmentYear) {
 		this.adjustmentYear = adjustmentYear;
 	}
 
 	/**
-	 * ‰ÁŒ¸’l(Œ)‚ğæ“¾‚µ‚Ü‚·B
+	 * åŠ æ¸›å€¤(æœˆ)ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return ‰ÁŒ¸’l(Œ)
+	 * @return åŠ æ¸›å€¤(æœˆ)
 	 */
 	public int getAdjustmentMonth() {
 		return adjustmentMonth;
 	}
 
 	/**
-	 * ‰ÁŒ¸’l(Œ)‚ğİ’è‚µ‚Ü‚·B
+	 * åŠ æ¸›å€¤(æœˆ)ã‚’è¨­å®šã—ã¾ã™ã€‚
 	 * 
-	 * @param adjustmentMonth ‰ÁŒ¸’l(Œ)
+	 * @param adjustmentMonth åŠ æ¸›å€¤(æœˆ)
 	 */
 	public void setAdjustmentMonth(int adjustmentMonth) {
 		this.adjustmentMonth = adjustmentMonth;
 	}
 
 	/**
-	 * ‰ÁŒ¸’l(“ú)‚ğæ“¾‚µ‚Ü‚·B
+	 * åŠ æ¸›å€¤(æ—¥)ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return ‰ÁŒ¸’l(“ú)
+	 * @return åŠ æ¸›å€¤(æ—¥)
 	 */
 	public int getAdjustmentDay() {
 		return adjustmentDay;
 	}
 
 	/**
-	 * ‰ÁŒ¸’l(“ú)‚ğİ’è‚µ‚Ü‚·B
+	 * åŠ æ¸›å€¤(æ—¥)ã‚’è¨­å®šã—ã¾ã™ã€‚
 	 * 
-	 * @param adjustmentDay ‰ÁŒ¸’l(“ú)
+	 * @param adjustmentDay åŠ æ¸›å€¤(æ—¥)
 	 */
 	public void setAdjustmentDay(int adjustmentDay) {
 		this.adjustmentDay = adjustmentDay;

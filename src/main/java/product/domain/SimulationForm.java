@@ -7,30 +7,30 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 /**
- * “ú•tŒvZˆ—‚ğƒVƒ~ƒ…ƒŒ[ƒg‚·‚é‰æ–Ê‚ğ•\Œ»‚·‚éƒtƒH[ƒ€ƒr[ƒ“‚Å‚·B
+ * æ—¥ä»˜è¨ˆç®—å‡¦ç†ã‚’ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ãƒˆã™ã‚‹ç”»é¢ã‚’è¡¨ç¾ã™ã‚‹ãƒ•ã‚©ãƒ¼ãƒ ãƒ“ãƒ¼ãƒ³ã§ã™ã€‚
  * 
  * @author koujienami
  */
 public class SimulationForm {
 
-	/** ŒvZŠî€“ú */
+	/** è¨ˆç®—åŸºæº–æ—¥ */
 	@NotBlank
 	@Pattern(regexp = "((19|[2-9][0-9])[0-9]{2})(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])")
 	private String baseDate;
-	/** ŒvZŒ‹‰Ê */
+	/** è¨ˆç®—çµæœ */
 	private List<Result> results;
 
 	/**
-	 * ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^B
+	 * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚
 	 */
 	public SimulationForm() {
 	}
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^B
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚
 	 * 
-	 * @param baseDate ŒvZŠî€“ú
-	 * @param results “ú•tŒvZ®ˆê——
+	 * @param baseDate è¨ˆç®—åŸºæº–æ—¥
+	 * @param results æ—¥ä»˜è¨ˆç®—å¼ä¸€è¦§
 	 */
 	public SimulationForm(String baseDate, List<DateFormula> results) {
 		this.baseDate = baseDate;
@@ -39,37 +39,37 @@ public class SimulationForm {
 	}
 
 	/**
-	 * ŒvZŠî€“ú‚ğæ“¾‚µ‚Ü‚·B
+	 * è¨ˆç®—åŸºæº–æ—¥ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return ŒvZŠî€“ú
+	 * @return è¨ˆç®—åŸºæº–æ—¥
 	 */
 	public String getBaseDate() {
 		return baseDate;
 	}
 
 	/**
-	 * ŒvZŠî€“ú‚ğİ’è‚µ‚Ü‚·B
+	 * è¨ˆç®—åŸºæº–æ—¥ã‚’è¨­å®šã—ã¾ã™ã€‚
 	 * 
-	 * @param baseDate ŒvZŠî€“ú
+	 * @param baseDate è¨ˆç®—åŸºæº–æ—¥
 	 */
 	public void setBaseDate(String baseDate) {
 		this.baseDate = baseDate;
 	}
 
 	/**
-	 * ŒvZŒ‹‰Ê‚ğæ“¾‚µ‚Ü‚·B
+	 * è¨ˆç®—çµæœã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return ŒvZŒ‹‰Ê
+	 * @return è¨ˆç®—çµæœ
 	 */
 	public List<Result> getResults() {
 		return results;
 	}
 
 	/**
-	 * “ú•tŒvZ®‚Ì“à—e‚ğ‰æ–Ê—p‚ÌŒvZŒ‹‰ÊƒIƒuƒWƒFƒNƒg‚É•ÏŠ·‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã®å†…å®¹ã‚’ç”»é¢ç”¨ã®è¨ˆç®—çµæœã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å¤‰æ›ã—ã¾ã™ã€‚
 	 * 
-	 * @param formula “ú•tŒvZ®
-	 * @return ‰æ–Ê—pŒvZŒ‹‰ÊƒIƒuƒWƒFƒNƒg
+	 * @param formula æ—¥ä»˜è¨ˆç®—å¼
+	 * @return ç”»é¢ç”¨è¨ˆç®—çµæœã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 */
 	public Result convertToResult(DateFormula formula) {
 		return new Result(formula);

@@ -4,22 +4,22 @@ import java.util.Arrays;
 import java.util.StringJoiner;
 
 /**
- * ‰æ–Ê—p‚ÌŒvZŒ‹‰ÊƒIƒuƒWƒFƒNƒg‚Å‚·B<br/>
- * ˆê——‰æ–Ê‚ÌŒvZŒ‹‰Ê‚Ìs‚ğ•\Œ»‚µ‚Ü‚·B
+ * ç”»é¢ç”¨ã®è¨ˆç®—çµæœã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§ã™ã€‚<br/>
+ * ä¸€è¦§ç”»é¢ã®è¨ˆç®—çµæœã®è¡Œã‚’è¡¨ç¾ã—ã¾ã™ã€‚
  * 
  * @author koujienami
  */
 public class Result {
 
-	/** “ú•tŒvZ® */
+	/** æ—¥ä»˜è¨ˆç®—å¼ */
 	private DateFormula formula;
-	/** ŒvZŒ‹‰Ê */
+	/** è¨ˆç®—çµæœ */
 	private String calculated;
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^B
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚
 	 * 
-	 * @param formula “ú•tŒvZ®
+	 * @param formula æ—¥ä»˜è¨ˆç®—å¼
 	 */
 	public Result(DateFormula formula) {
 		this.formula = formula;
@@ -36,37 +36,37 @@ public class Result {
 	}
 
 	/**
-	 * “ú•tŒvZ®‚ğæ“¾‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return “ú•tŒvZ®
+	 * @return æ—¥ä»˜è¨ˆç®—å¼
 	 */
 	public DateFormula getFormula() {
 		return formula;
 	}
 
 	/**
-	 * ŒvZŒ‹‰Ê‚ğæ“¾‚µ‚Ü‚·B
+	 * è¨ˆç®—çµæœã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return ŒvZŒ‹‰Ê
+	 * @return è¨ˆç®—çµæœ
 	 */
 	public String getCalculated() {
 		return calculated;
 	}
 
 	/**
-	 * ŒvZŒ‹‰Ê‚ğİ’è‚µ‚Ü‚·B
+	 * è¨ˆç®—çµæœã‚’è¨­å®šã—ã¾ã™ã€‚
 	 * 
-	 * @param calculated ŒvZŒ‹‰Ê
+	 * @param calculated è¨ˆç®—çµæœ
 	 */
 	public void setCalculated(String calculated) {
 		this.calculated = calculated;
 	}
 
 	/**
-	 * ”NŒ“ú‡‚É‹æØ‚ç‚ê‚½ŒvZ®‚ğæ“¾‚µ‚Ü‚·B<br/>
-	 * ‰æ–Ê—p‚Éu / v‹æØ‚è‚Å‰ÁŒ¸’l‚ğ‚»‚ê‚¼‚ê”NŒ“ú‡‚Å•\¦‚µ‚Ü‚·B
+	 * å¹´æœˆæ—¥é †ã«åŒºåˆ‡ã‚‰ã‚ŒãŸè¨ˆç®—å¼ã‚’å–å¾—ã—ã¾ã™ã€‚<br/>
+	 * ç”»é¢ç”¨ã«ã€Œ / ã€åŒºåˆ‡ã‚Šã§åŠ æ¸›å€¤ã‚’ãã‚Œãã‚Œå¹´æœˆæ—¥é †ã§è¡¨ç¤ºã—ã¾ã™ã€‚
 	 * 
-	 * @return ”NŒ“ú‡‚É‹æØ‚ç‚ê‚½ŒvZ®
+	 * @return å¹´æœˆæ—¥é †ã«åŒºåˆ‡ã‚‰ã‚ŒãŸè¨ˆç®—å¼
 	 */
 	public String getYmdFormula() {
 		int[] ymdFormula = {formula.getAdjustmentYear(), formula.getAdjustmentMonth(), formula.getAdjustmentDay()};

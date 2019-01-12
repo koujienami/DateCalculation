@@ -17,7 +17,7 @@ import product.domain.DateFormula;
 @RunWith(Enclosed.class)
 public class CalculationServiceTest {
 
-	public static class “ú•tŒvZ—áŠOˆ— {
+	public static class æ—¥ä»˜è¨ˆç®—ä¾‹å¤–å‡¦ç† {
 
 		private CalculationService sut;
 
@@ -27,90 +27,90 @@ public class CalculationServiceTest {
 		}
 
 		@Test
-		public void ŒvZŠî€“ú‚ÉNULL‚ğ“n‚·‚ÆNullPointerException‚Æ‚È‚é–() throws Exception {
+		public void è¨ˆç®—åŸºæº–æ—¥ã«NULLã‚’æ¸¡ã™ã¨NullPointerExceptionã¨ãªã‚‹äº‹() throws Exception {
 			assertThatThrownBy(() -> {
 				sut.calculate(null, setUpFormula(0, 0, 0));
 			}).isInstanceOf(NullPointerException.class);
 		}
 
 		@Test
-		public void ŒvZŠî€“ú‚ğyyyyMMddˆÈŠO‚ÌŒ`®‚Å“n‚·‚ÆDateTimeParseException‚Æ‚È‚é–() throws Exception {
+		public void è¨ˆç®—åŸºæº–æ—¥ã‚’yyyyMMddä»¥å¤–ã®å½¢å¼ã§æ¸¡ã™ã¨DateTimeParseExceptionã¨ãªã‚‹äº‹() throws Exception {
 			assertThatThrownBy(() -> {
 				sut.calculate("201812", setUpFormula(0, 0, 0));
 			}).isInstanceOf(DateTimeParseException.class);
 		}
 
 		@Test
-		public void “ú•tŒvZ®‚ÉNULL‚ğ“n‚·‚ÆNullPointerException‚Æ‚È‚é–() throws Exception {
+		public void æ—¥ä»˜è¨ˆç®—å¼ã«NULLã‚’æ¸¡ã™ã¨NullPointerExceptionã¨ãªã‚‹äº‹() throws Exception {
 			assertThatThrownBy(() -> {
 				sut.calculate("20181201", null);
 			}).isInstanceOf(NullPointerException.class);
 		}
 
-		private DateFormula setUpFormula(int ‰ÁŒ¸”N, int ‰ÁŒ¸Œ, int ‰ÁŒ¸“ú) {
+		private DateFormula setUpFormula(int åŠ æ¸›å¹´, int åŠ æ¸›æœˆ, int åŠ æ¸›æ—¥) {
 			DateFormula formula = new DateFormula();
-			formula.setAdjustmentYear(‰ÁŒ¸”N);
-			formula.setAdjustmentMonth(‰ÁŒ¸Œ);
-			formula.setAdjustmentDay(‰ÁŒ¸“ú);
+			formula.setAdjustmentYear(åŠ æ¸›å¹´);
+			formula.setAdjustmentMonth(åŠ æ¸›æœˆ);
+			formula.setAdjustmentDay(åŠ æ¸›æ—¥);
 			return formula;
 		}
 	}
 
 	@RunWith(Parameterized.class)
-	public static class “ú•tŒvZ {
+	public static class æ—¥ä»˜è¨ˆç®— {
 
-		private String Šî€“ú;
-		private int ‰ÁŒ¸”N;
-		private int ‰ÁŒ¸Œ;
-		private int ‰ÁŒ¸“ú;
-		private String Šú‘Ò’l;
+		private String åŸºæº–æ—¥;
+		private int åŠ æ¸›å¹´;
+		private int åŠ æ¸›æœˆ;
+		private int åŠ æ¸›æ—¥;
+		private String æœŸå¾…å€¤;
 
-		@Parameters(name = "{index} Šî€“ú:{0}, ‰ÁŒ¸”N:{1}, ‰ÁŒ¸Œ:{2}, ‰ÁŒ¸“ú:{3}, Šú‘Ò’l:{4}")
+		@Parameters(name = "{index} åŸºæº–æ—¥:{0}, åŠ æ¸›å¹´:{1}, åŠ æ¸›æœˆ:{2}, åŠ æ¸›æ—¥:{3}, æœŸå¾…å€¤:{4}")
 		public static Object[][] params() {
 			return new Object[][] {
-				// ‚·‚×‚Ä–¢w’è
+				// ã™ã¹ã¦æœªæŒ‡å®š
 				{"20181201", 0, 0, 0, "20181201"},
-				// ‚·‚×‚Äw’è
+				// ã™ã¹ã¦æŒ‡å®š
 				{"20181201", 1, 1, 1, "20200102"},
-				// Œ‚Ì‰ÁZ‚Å“ú”‚ÌØ‚èÌ‚Ä
+				// æœˆã®åŠ ç®—ã§æ—¥æ•°ã®åˆ‡ã‚Šæ¨ã¦
 				{"20181031", 0, 1, 0, "20181130"},
-				// ”NŒ‚Ü‚½‚¬
+				// å¹´æœˆã¾ãŸã
 				{"20181202", 0, 13, 0, "20200102"},
 				{"20181202", 0, 0, 365, "20191202"},
-				// —‚“ú
+				// ç¿Œæ—¥
 				{"20181201", 0, 0, 1, "20181202"},
-				// ‘O“ú
+				// å‰æ—¥
 				{"20181201", 0, 0, -1, "20181130"},
-				// —‚Œ
+				// ç¿Œæœˆ
 				{"20181101", 0, 1, 0, "20181201"},
-				// ‘OŒ
+				// å‰æœˆ
 				{"20181201", 0, -1, 0, "20181101"},
-				// —‚”N
+				// ç¿Œå¹´
 				{"20181201", 1, 0, 0, "20191201"},
-				// ‘O”N
+				// å‰å¹´
 				{"20181201", -1, 0, 0, "20171201"},
 			};
 		}
 
-		public “ú•tŒvZ(String Šî€“ú, int ‰ÁŒ¸”N, int ‰ÁŒ¸Œ, int ‰ÁŒ¸“ú, String Šú‘Ò’l) {
-			this.Šî€“ú = Šî€“ú;
-			this.‰ÁŒ¸”N = ‰ÁŒ¸”N;
-			this.‰ÁŒ¸Œ = ‰ÁŒ¸Œ;
-			this.‰ÁŒ¸“ú = ‰ÁŒ¸“ú;
-			this.Šú‘Ò’l = Šú‘Ò’l;
+		public æ—¥ä»˜è¨ˆç®—(String åŸºæº–æ—¥, int åŠ æ¸›å¹´, int åŠ æ¸›æœˆ, int åŠ æ¸›æ—¥, String æœŸå¾…å€¤) {
+			this.åŸºæº–æ—¥ = åŸºæº–æ—¥;
+			this.åŠ æ¸›å¹´ = åŠ æ¸›å¹´;
+			this.åŠ æ¸›æœˆ = åŠ æ¸›æœˆ;
+			this.åŠ æ¸›æ—¥ = åŠ æ¸›æ—¥;
+			this.æœŸå¾…å€¤ = æœŸå¾…å€¤;
 		}
 
 		@Test
 		public void test() throws Exception {
 			DateFormula formula = new DateFormula();
-			formula.setAdjustmentYear(‰ÁŒ¸”N);
-			formula.setAdjustmentMonth(‰ÁŒ¸Œ);
-			formula.setAdjustmentDay(‰ÁŒ¸“ú);
+			formula.setAdjustmentYear(åŠ æ¸›å¹´);
+			formula.setAdjustmentMonth(åŠ æ¸›æœˆ);
+			formula.setAdjustmentDay(åŠ æ¸›æ—¥);
 
 			CalculationService sut = new CalculationService();
-			String actual = sut.calculate(Šî€“ú, formula);
+			String actual = sut.calculate(åŸºæº–æ—¥, formula);
 
-			assertThat(actual).isEqualTo(Šú‘Ò’l);
+			assertThat(actual).isEqualTo(æœŸå¾…å€¤);
 		}
 	}
 }

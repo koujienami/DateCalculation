@@ -30,36 +30,36 @@ public class SimulationPage {
 		return Selenide.title();
 	}
 
-	public SimulationPage ŒvZŠî€“ú‚Í(String ŒvZŠî€“ú) {
-		baseDate.setValue(ŒvZŠî€“ú);
+	public SimulationPage è¨ˆç®—åŸºæº–æ—¥ã¯(String è¨ˆç®—åŸºæº–æ—¥) {
+		baseDate.setValue(è¨ˆç®—åŸºæº–æ—¥);
 		return page(SimulationPage.class);
 	}
 
-	public SimulationPage ‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚·‚é() {
+	public SimulationPage ã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã™ã‚‹() {
 		simulationButton.click();
 		return page(SimulationPage.class);
 	}
 
-	public RegisterPage V‹K“o˜^‰æ–Ê‚Ö‘JˆÚ‚·‚é() {
+	public RegisterPage æ–°è¦ç™»éŒ²ç”»é¢ã¸é·ç§»ã™ã‚‹() {
 		registerButton.click();
 		return page(RegisterPage.class);
 	}
 
-	public UpdatePage XV‰æ–Ê‚Ö‘JˆÚ‚·‚é(int s) {
-		$(By.id(s + "_" + "updateButton")).click();
+	public UpdatePage æ›´æ–°ç”»é¢ã¸é·ç§»ã™ã‚‹(int è¡Œ) {
+		$(By.id(è¡Œ + "_" + "updateButton")).click();
 		return page(UpdatePage.class);
 	}
 
-	public SimulationPage íœ‚ğÀs‚·‚é(int s) {
-		$(By.id(s + "_" + "deleteButton")).click();
+	public SimulationPage å‰Šé™¤ã‚’å®Ÿè¡Œã™ã‚‹(int è¡Œ) {
+		$(By.id(è¡Œ + "_" + "deleteButton")).click();
 		return page(SimulationPage.class);
 	}
 
-	public SelenideElement ŒŸõŒ‹‰Ê() {
+	public SelenideElement æ¤œç´¢çµæœ() {
 		return $(By.cssSelector(".uk-table tbody"));
 	}
 
-	public int ŒŸõŒ‹‰Ê‚ÌŒ”() {
+	public int æ¤œç´¢çµæœã®ä»¶æ•°() {
 		return $(By.cssSelector(".uk-table")).findElements(By.tagName("tbody")).size();
 	}
 

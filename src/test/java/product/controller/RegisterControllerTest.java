@@ -45,15 +45,15 @@ public class RegisterControllerTest {
 	}
 
 	@Test
-	public void V‹K“o˜^ƒy[ƒW‚ÌƒŠƒNƒGƒXƒgŒ‹‰Ê‚ª³í‚Æ‚È‚èView‚Æ‚µ‚Äregister‚ª•Ô‚é–() throws Exception {
+	public void æ–°è¦ç™»éŒ²ãƒšãƒ¼ã‚¸ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆçµæœãŒæ­£å¸¸ã¨ãªã‚ŠViewã¨ã—ã¦registerãŒè¿”ã‚‹äº‹() throws Exception {
 		sut.perform(get("/register"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("register"));
 	}
 
 	@Test
-	public void V‹K“o˜^ƒy[ƒW‚Å“o˜^ˆ—‚ğs‚¤‚ÆƒT[ƒrƒX‚Åˆ—‚³‚ê‚ÄƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‰æ–Ê‚É‘JˆÚ‚³‚ê‚é–() throws Exception {
-		sut.perform(post("/register").param("dateId", "TEST").param("dateName", "ƒeƒXƒg“ú•t–¼"))
+	public void æ–°è¦ç™»éŒ²ãƒšãƒ¼ã‚¸ã§ç™»éŒ²å‡¦ç†ã‚’è¡Œã†ã¨ã‚µãƒ¼ãƒ“ã‚¹ã§å‡¦ç†ã•ã‚Œã¦ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ç”»é¢ã«é·ç§»ã•ã‚Œã‚‹äº‹() throws Exception {
+		sut.perform(post("/register").param("dateId", "TEST").param("dateName", "ãƒ†ã‚¹ãƒˆæ—¥ä»˜å"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("simulation"));
 
@@ -61,56 +61,56 @@ public class RegisterControllerTest {
 	}
 
 	@Test
-	public void V‹K“o˜^ƒy[ƒW‚Å“ú•tID‚ªNULL‚Ìó‘Ô‚Å“o˜^ˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
-		sut.perform(post("/register").param("dateName", "ƒeƒXƒg“ú•t–¼"))
+	public void æ–°è¦ç™»éŒ²ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜IDãŒNULLã®çŠ¶æ…‹ã§ç™»éŒ²å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
+		sut.perform(post("/register").param("dateName", "ãƒ†ã‚¹ãƒˆæ—¥ä»˜å"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("register"));
 	}
 
 	@Test
-	public void V‹K“o˜^ƒy[ƒW‚Å“ú•tID‚ª‹ó‚Ìó‘Ô‚Å“o˜^ˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
-		sut.perform(post("/register").param("dateId", "").param("dateName", "ƒeƒXƒg“ú•t–¼"))
+	public void æ–°è¦ç™»éŒ²ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜IDãŒç©ºã®çŠ¶æ…‹ã§ç™»éŒ²å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
+		sut.perform(post("/register").param("dateId", "").param("dateName", "ãƒ†ã‚¹ãƒˆæ—¥ä»˜å"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("register"));
 	}
 
 	@Test
-	public void V‹K“o˜^ƒy[ƒW‚Å“ú•tID‚ª‹ó”’‚Ìó‘Ô‚Å“o˜^ˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
-		sut.perform(post("/register").param("dateId", " ").param("dateName", "ƒeƒXƒg“ú•t–¼"))
+	public void æ–°è¦ç™»éŒ²ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜IDãŒç©ºç™½ã®çŠ¶æ…‹ã§ç™»éŒ²å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
+		sut.perform(post("/register").param("dateId", " ").param("dateName", "ãƒ†ã‚¹ãƒˆæ—¥ä»˜å"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("register"));
 	}
 
 	@Test
-	public void V‹K“o˜^ƒy[ƒW‚Å“ú•tID‚ª6Œ…ˆÈã‚Ìó‘Ô‚Å“o˜^ˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
-		sut.perform(post("/register").param("dateId", "1234567").param("dateName", "ƒeƒXƒg“ú•t–¼"))
+	public void æ–°è¦ç™»éŒ²ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜IDãŒ6æ¡ä»¥ä¸Šã®çŠ¶æ…‹ã§ç™»éŒ²å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
+		sut.perform(post("/register").param("dateId", "1234567").param("dateName", "ãƒ†ã‚¹ãƒˆæ—¥ä»˜å"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("register"));
 	}
 
 	@Test
-	public void V‹K“o˜^ƒy[ƒW‚Å“ú•t–¼‚ªNULL‚Ìó‘Ô‚Å“o˜^ˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
+	public void æ–°è¦ç™»éŒ²ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜åãŒNULLã®çŠ¶æ…‹ã§ç™»éŒ²å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
 		sut.perform(post("/register").param("dateId", "TEST"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("register"));
 	}
 
 	@Test
-	public void V‹K“o˜^ƒy[ƒW‚Å“ú•t–¼‚ª‹ó‚Ìó‘Ô‚Å“o˜^ˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
+	public void æ–°è¦ç™»éŒ²ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜åãŒç©ºã®çŠ¶æ…‹ã§ç™»éŒ²å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
 		sut.perform(post("/register").param("dateId", "TEST").param("dateName", ""))
 			.andExpect(status().isOk())
 			.andExpect(view().name("register"));
 	}
 
 	@Test
-	public void V‹K“o˜^ƒy[ƒW‚Å“ú•t–¼‚ª‹ó”’‚Ìó‘Ô‚Å“o˜^ˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
+	public void æ–°è¦ç™»éŒ²ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜åãŒç©ºç™½ã®çŠ¶æ…‹ã§ç™»éŒ²å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
 		sut.perform(post("/register").param("dateId", "TEST").param("dateName", " "))
 			.andExpect(status().isOk())
 			.andExpect(view().name("register"));
 	}
 
 	@Test
-	public void V‹K“o˜^ƒy[ƒW‚Å“ú•t–¼‚ª32Œ…ˆÈã‚Ìó‘Ô‚Å“o˜^ˆ—‚ğs‚¤‚Æ—áŠOî•ñ‚ª“ü‚Á‚½ó‘Ô‚Å‰æ–Ê‚ª•Ô‚é–() throws Exception {
+	public void æ–°è¦ç™»éŒ²ãƒšãƒ¼ã‚¸ã§æ—¥ä»˜åãŒ32æ¡ä»¥ä¸Šã®çŠ¶æ…‹ã§ç™»éŒ²å‡¦ç†ã‚’è¡Œã†ã¨ä¾‹å¤–æƒ…å ±ãŒå…¥ã£ãŸçŠ¶æ…‹ã§ç”»é¢ãŒè¿”ã‚‹äº‹() throws Exception {
 		sut.perform(post("/register").param("dateId", "TEST").param("dateName", "123456789012345678901234567890123"))
 			.andExpect(status().isOk())
 			.andExpect(view().name("register"));

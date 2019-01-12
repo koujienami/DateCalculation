@@ -12,39 +12,39 @@ import product.domain.DateFormula;
 import product.repository.DateFormulaRepository;
 
 /**
- * “ú•tŒvZ‚ÉŠÖ‚í‚éˆ—‚ğs‚¤ƒT[ƒrƒX‚Å‚·B
+ * æ—¥ä»˜è¨ˆç®—ã«é–¢ã‚ã‚‹å‡¦ç†ã‚’è¡Œã†ã‚µãƒ¼ãƒ“ã‚¹ã§ã™ã€‚
  * 
  * @author koujienami
  */
 @Service
 public class CalculationService {
 
-	/** “ú•tŒvZ®ƒŠƒ|ƒWƒgƒŠ */
+	/** æ—¥ä»˜è¨ˆç®—å¼ãƒªãƒã‚¸ãƒˆãƒª */
 	@Autowired
 	private DateFormulaRepository repository;
 
 	/**
-	 * “ú•tŒvZ®‚Ìˆê——‚ğ‘SŒŒŸõ‚µ‚Äæ“¾‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã®ä¸€è¦§ã‚’å…¨ä»¶æ¤œç´¢ã—ã¦å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return “ú•tŒvZ®‚Ì‘SŒ
+	 * @return æ—¥ä»˜è¨ˆç®—å¼ã®å…¨ä»¶
 	 */
 	public List<DateFormula> search() {
 		return repository.select();
 	}
 
 	/**
-	 * “ú•tŒvZ®‚ğæ“¾‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’å–å¾—ã—ã¾ã™ã€‚
 	 * 
-	 * @return “ú•tŒvZ®
+	 * @return æ—¥ä»˜è¨ˆç®—å¼
 	 */
 	public DateFormula search(String dateId) {
 		return repository.selectPK(dateId);
 	}
 
 	/**
-	 * “ú•tŒvZ®‚ğ“o˜^‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’ç™»éŒ²ã—ã¾ã™ã€‚
 	 * 
-	 * @param formula “o˜^‚·‚é“ú•tŒvZ®
+	 * @param formula ç™»éŒ²ã™ã‚‹æ—¥ä»˜è¨ˆç®—å¼
 	 */
 	@Transactional
 	public void register(DateFormula formula) {
@@ -52,9 +52,9 @@ public class CalculationService {
 	}
 
 	/**
-	 * “ú•tŒvZ®‚ğXV‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’æ›´æ–°ã—ã¾ã™ã€‚
 	 * 
-	 * @param formula XV‚·‚é“ú•tŒvZ®
+	 * @param formula æ›´æ–°ã™ã‚‹æ—¥ä»˜è¨ˆç®—å¼
 	 */
 	@Transactional
 	public void update(DateFormula formula) {
@@ -62,9 +62,9 @@ public class CalculationService {
 	}
 
 	/**
-	 * “ú•tŒvZ®‚ğíœ‚µ‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—å¼ã‚’å‰Šé™¤ã—ã¾ã™ã€‚
 	 * 
-	 * @param dateId íœ‘ÎÛ‚Ì“ú•tID
+	 * @param dateId å‰Šé™¤å¯¾è±¡ã®æ—¥ä»˜ID
 	 */
 	@Transactional
 	public void delete(String dateId) {
@@ -72,13 +72,13 @@ public class CalculationService {
 	}
 
 	/**
-	 * “ú•tŒvZ‚ğs‚¢‚Ü‚·B<br/>
-	 * ŒvZŠî€“ú‚ğƒx[ƒX‚ÉA“ú•tŒvZ®‚Ì‰ÁŒ¸’l‚ÉŠî‚Ã‚¢‚ÄŒvZ‚ğs‚¢‚Ü‚·B<br/>
-	 * ŒvZŒã‚Ì‘®‚ÍuyyyyMMddv‚Ì•¶š—ñ‚Æ‚È‚è‚Ü‚·B
+	 * æ—¥ä»˜è¨ˆç®—ã‚’è¡Œã„ã¾ã™ã€‚<br/>
+	 * è¨ˆç®—åŸºæº–æ—¥ã‚’ãƒ™ãƒ¼ã‚¹ã«ã€æ—¥ä»˜è¨ˆç®—å¼ã®åŠ æ¸›å€¤ã«åŸºã¥ã„ã¦è¨ˆç®—ã‚’è¡Œã„ã¾ã™ã€‚<br/>
+	 * è¨ˆç®—å¾Œã®æ›¸å¼ã¯ã€ŒyyyyMMddã€ã®æ–‡å­—åˆ—ã¨ãªã‚Šã¾ã™ã€‚
 	 * 
-	 * @param baseDate ŒvZŠî€“ú
-	 * @param formula “ú•tŒvZ®
-	 * @return ŒvZŒ‹‰Ê
+	 * @param baseDate è¨ˆç®—åŸºæº–æ—¥
+	 * @param formula æ—¥ä»˜è¨ˆç®—å¼
+	 * @return è¨ˆç®—çµæœ
 	 */
 	public String calculate(String baseDate, DateFormula formula) {
 		LocalDate date = LocalDate.parse(baseDate, DateTimeFormatter.ofPattern("yyyyMMdd"));

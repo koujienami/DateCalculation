@@ -31,32 +31,32 @@ public class UpdatePage {
 		return Selenide.title();
 	}
 
-	public SimulationPage ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ƒy[ƒW‚Ö–ß‚é() {
+	public SimulationPage ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒšãƒ¼ã‚¸ã¸æˆ»ã‚‹() {
 		backButton.click();
 		return page(SimulationPage.class);
 	}
 
-	public UpdatePage “ú•t–¼‚Í(String “ú•t–¼) {
-		dateName.setValue(“ú•t–¼);
+	public UpdatePage æ—¥ä»˜åã¯(String æ—¥ä»˜å) {
+		dateName.setValue(æ—¥ä»˜å);
 		return page(UpdatePage.class);
 	}
 
-	public UpdatePage ‰ÁŒ¸”N‚Í(String ‰ÁŒ¸”N) {
-		adjustmentYear.setValue(‰ÁŒ¸”N);
+	public UpdatePage åŠ æ¸›å¹´ã¯(String åŠ æ¸›å¹´) {
+		adjustmentYear.setValue(åŠ æ¸›å¹´);
 		return page(UpdatePage.class);
 	}
 
-	public UpdatePage ‰ÁŒ¸Œ‚Í(String ‰ÁŒ¸Œ) {
-		adjustmentMonth.setValue(‰ÁŒ¸Œ);
+	public UpdatePage åŠ æ¸›æœˆã¯(String åŠ æ¸›æœˆ) {
+		adjustmentMonth.setValue(åŠ æ¸›æœˆ);
 		return page(UpdatePage.class);
 	}
 
-	public UpdatePage ‰ÁŒ¸“ú‚Í(String ‰ÁŒ¸“ú) {
-		adjustmentDay.setValue(‰ÁŒ¸“ú);
+	public UpdatePage åŠ æ¸›æ—¥ã¯(String åŠ æ¸›æ—¥) {
+		adjustmentDay.setValue(åŠ æ¸›æ—¥);
 		return page(UpdatePage.class);
 	}
 
-	public SimulationPage ‚ÅXV‚·‚é() {
+	public SimulationPage ã§æ›´æ–°ã™ã‚‹() {
 		updateButton.click();
 		return page(SimulationPage.class);
 	}
