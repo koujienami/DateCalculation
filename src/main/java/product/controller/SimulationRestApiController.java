@@ -28,6 +28,17 @@ public class SimulationRestApiController {
 	private CalculationService service;
 
 	/**
+	 * 日付計算式の一覧情報取得する。
+	 * 
+	 * @param 日付ID
+	 * @return 表示するテンプレート
+	 */
+	@GetMapping
+	public List<DateFormula> getDateFormulaList() {
+		return service.search();
+	}
+
+	/**
 	 * 日付計算式の情報取得する。
 	 * 
 	 * @param 日付ID
