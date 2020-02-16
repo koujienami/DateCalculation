@@ -21,6 +21,7 @@ import product.service.CalculationService;
  * 日付計算処理をシミュレートする画面に紐づくコントローラーです。
  * 
  * @author koujienami
+ * @since 2020/02/16
  */
 @Controller
 @RequestMapping
